@@ -1,0 +1,2 @@
+rootProject.name='MapaPeru'
+include ':app'

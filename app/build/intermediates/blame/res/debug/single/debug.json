@@ -1,0 +1,298 @@
+[
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_splash_activity.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_splash_activity.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_information.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_information.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_button.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\button.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_phone.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\phone.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_virus.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\virus.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_statistics.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_statistics.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background_splash.jpg.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\background_splash.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_health.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_health.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_health.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_health.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_health.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_health.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_information.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_information.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_slide_layout.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\slide_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_splash.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\splash.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_statistics.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_statistics.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_survey.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\ic_survey.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_verificado.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_verificado.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_information.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_information.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_maps.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_maps.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_health.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_health.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_triaje.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_triaje.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_selector.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_triaje.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_triaje.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_statistics.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\ic_statistics.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_triaje.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_triaje.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_statistics.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\fragment_statistics.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_maps.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_maps.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_bottom_navigaton.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_bottom_navigaton.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_maps.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_maps.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_call.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\ic_call.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_health.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\ic_health.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_background.jpg.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\background.jpg"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_citizen_registration.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_citizen_registration.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_maps.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_maps.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_maps.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_maps.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_inicio.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_inicio.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_stethoscope.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\stethoscope.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_information.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_information.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_place.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\ic_place.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_statistics.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-hdpi\\ic_statistics.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\menu\\main_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_triaje.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_triaje.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_statistics.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_statistics.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_presentation.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_presentation.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_surveyicon.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\surveyicon.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_triaje.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\fragment_triaje.xml"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_information.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_information.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_survey.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\survey.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_maps.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_maps.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_doctor.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\doctor.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_health.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xhdpi\\ic_health.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\drawable_address.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\drawable\\address.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_triaje.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-mdpi\\ic_triaje.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_statistics.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_statistics.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_triaje.xml.flat",
+        "source": "C:\\Users\\Estacion\\Documents\\AndroidStudioProjects\\MapaPeru\\app\\src\\main\\res\\layout\\activity_triaje.xml"
+    }
+]
