@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_triaje"
+        android:title="Triaje"
+        android:icon="@drawable/ic_survey"/>
+
+    <item android:id="@+id/menu_maps"
+        android:title="Mapa"
+        android:icon="@drawable/ic_place"/>
+
+    <item android:id="@+id/menu_statistics"
+        android:title="Cifras"
+        android:icon="@drawable/ic_statistics"/>
+
+    <item android:id="@+id/menu_health"
+        android:title="Cuidados"
+        android:icon="@drawable/ic_health"/>
+
+    <item android:id="@+id/menu_information"
+        android:title="Infórmate"
+        android:icon="@drawable/ic_call"/>
+
+</menu>
