@@ -1,7 +1,7 @@
 ﻿$(document).ready(function () {
 
 
-///provando git en asp net xd   
+///provando git en asp net xd   sdfjhdsjfhsdkj erert
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
