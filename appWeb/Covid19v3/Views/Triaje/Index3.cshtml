@@ -328,82 +328,116 @@
     $(document).ready(function () {
         
         $(function () {
-                $("#RegistrarConfirmado").on("click", function (e) {
-                    e.preventDefault();
-                    var url = "/Triaje/Index3";
+            $("#RegistrarConfirmado").on("click", function (e) {
+                      if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                      var url = "/Triaje/Index3";
                     $.get(url).done(function (result) {
                         $("body").html(result);
                         $('#sidebar').addClass('active');
+                       
                     });
+                      history.pushState(null, "",url); 
+                    }else{
+                    e.preventDefault();
+                      var url = "/Triaje/Index3";
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').removeClass('active');
+                    });
+                    history.pushState(null, "",url);     
+                }
+                    
 
                 });
-          });
+        });
+        
+    
+                function HabilitarSideBar(e,href) {
+               if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                    var url =href;
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').addClass('active');
+                       
+                    });
+                     history.pushState(null, "",url);  
+               }else{
+                    e.preventDefault();
+                    var url =href;
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').removeClass('active');
+                    });
+                        history.pushState(null, "",url);  
+               }
+                   
+        }
+
+           
+        $("#a-btn1").on("click", function (e) {
+                var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+            
+                });
+           
+
+
             $(function () {
-                $("#a-btn1").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
                 $("#a-btn2").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                   
                 });
+            });
+
+
+             $(function () {
                 $("#a-btn3").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
-                $("#a-btn4").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
-                $("#a-btn5").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
-                $("#a-btn6").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
-                $("#a-btn7").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                   
                 });
              });
-           });
+
+
+            $(function () {
+                $("#a-btn4").on("click", function (e) {
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                   
+                });
+            });
+
+
+              $(function () {
+                $("#a-btn5").on("click", function (e) {
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                     
+                });
+              });
+
+
+                $(function () {
+                $("#a-btn6").on("click", function (e) {
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                
+                });
+                });
+
+              $(function () {
+                $("#a-btn7").on("click", function (e) {
+                       var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+     
+                });
+                      
+             });
+            
+     });
 
 
 

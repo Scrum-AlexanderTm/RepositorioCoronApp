@@ -3,21 +3,85 @@
     ViewBag.Title = "menu";
 }
 
-<div id="sidebar" class="sidebar">
-    <a href="#" class="boton-cerrar" onclick="ocultar()">&times;</a>
-    <ul class="menu">
-        <li><a href="#">Opción 1</a></li>
-        <li><a href="#">Opción 2</a></li>
-        <li><a href="#">Opción 3</a></li>
-        <li><a href="#">Opción 4</a></li>
-        <li><a href="#">Opción 5</a></li>
-    </ul>
+    <div class="row " style="padding:1rem 2rem">
+        <div class="col mb-4" >
+            <div class="card h-50" style="background-color:#ffd800;padding:.5rem 1.5rem;text-align:center" >
+               
+                <div class="card-body">
+                    <h5 class="card-title">Casos Detectados</h5>
+                    <h2 class="card-text">67.307</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100" style="background-color:#00ff90;padding:.5rem 1.5rem;text-align:center">
+               
+                <div class="card-body">
+                    <h5 class="card-title">Fallecidos</h5>
+                    <h2 class="card-text">1889</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100" style="background-color:#b98af5;padding:.5rem 1.5rem;text-align:center">
+               
+                <div class="card-body">
+                    <h5 class="card-title">Hospitalizados</h5>
+                    <h2 class="card-text">6601</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card h-100" style="background-color:#7fcffe;padding:.5rem 1.5rem;text-align:center">
+                
+                <div class="card-body">
+                    <h5 class="card-title">Recuperados</h5>
+                    <h2 class="card-text">21.349</h2>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div>
 
-<div id="contenido">
-    <p><a href="http://www.campusmvp.es" target="_blank"><img src="logo-campusmvp-150.png" alt="campusMVP" style="border-width: 0px" /></a></p>
-    <h1>Un menú lateral</h1>
-    <a id="abrir" class="abrir-cerrar" href="javascript:void(0)" onclick="mostrar()">Abrir menu</a><a id="cerrar" class="abrir-cerrar" href="#" onclick="ocultar()">Cerrar menu</a>
-</div>
 
+
+
+    <div class="row " style="padding:1rem 2rem">
+        <div class="col mb-4 " style="display:none">
+            <div class="card h-50">
+
+                <div class="card-body" style="background-color:#8faffb;padding:.5rem 1.5rem;text-align:center">
+                    <h5 class="card-title">Pruebas</h5>
+                    <h2 class="card-text">504.930</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4 ">
+            <div class="card h-50">
+
+                <div class="card-body" style="background-color:#8faffb;padding:.5rem 1.5rem;text-align:center">
+                    <h5 class="card-title">Pruebas</h5>
+                    <h2 class="card-text">504.930</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4 ">
+            <div class="card h-100" style="background-color:#ecfa73;padding:.5rem 1.5rem;text-align:center">
+
+                <div class="card-body">
+                    <h5 class="card-title">Triaje</h5>
+                    <h2 class="card-text">604.930</h2>
+                </div>
+            </div>
+        </div>
+        <div class="col mb-4 " style="display:none">
+            <div class="card h-50">
+
+                <div class="card-body" style="background-color:#8faffb;padding:.5rem 1.5rem;text-align:center">
+                    <h5 class="card-title">Pruebas</h5>
+                    <h2 class="card-text">504.930</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>

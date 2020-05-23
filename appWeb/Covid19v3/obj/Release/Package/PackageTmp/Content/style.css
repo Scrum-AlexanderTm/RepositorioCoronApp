@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+  
 }
 
 p {
@@ -37,7 +37,7 @@ a {
 
 .navbar {
     padding: 15px 10px;
-    background: #fa3e01;
+    background-color:  red !important;
     border: none;
     border-radius: 0;
     margin-bottom: 40px;
@@ -67,6 +67,7 @@ a {
 }
 
 #sidebar {
+  
     min-width: 250px;
     max-width: 250px;
     background: #fff;
@@ -245,12 +246,13 @@ a.article, a.article:hover {
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
+
 .footer {
     position: fixed;
     bottom: 0;
     height: 35px;
     background-color: red;
-    width: calc(100% - 230px);
+    width: calc(100% - 210px);
     display: block
 }
 .footer.active {
@@ -258,9 +260,12 @@ a.article, a.article:hover {
     width: calc(100% - 290px);
     
 }
-    @media (max-width: 768px) {
-
-        #sidebar {
+.link-layout:hover {
+    color: #7386D5 !important;
+    text-decoration: none;
+}
+@media (max-width: 768px) {
+    #sidebar {
             margin-left: -250px;
         }
 

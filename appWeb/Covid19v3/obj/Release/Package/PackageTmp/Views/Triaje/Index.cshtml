@@ -197,9 +197,12 @@
                         "</td>" +
                         "</tr>");
                     
-                    if (item.Estado == "Evaluacion          " || item.Estado == "Fallecido           "
-                        || item.Estado == "Hospitalizado           " || item.Estado == "Recuperado           "
-                        || item.Estado == "Confirmado           "
+                     
+                    if (item.Estado == "Evaluacion          " ||
+                        item.Estado == "Fallecido           " ||
+                        item.Estado == "Hospitalizado       " ||
+                        item.Estado == "Recuperado          " ||
+                        item.Estado == "Confirmado          "
                     ) {
                          $("#" + item.IdTriaje+ " a:first-child").remove();
                          $('#'+item.IdTriaje + " a:last-child").css("margin-left","4.3rem")
@@ -304,7 +307,43 @@
         RegistrarConfirmado();
     });
  
-    function RegistrarConfirmado() {
+
+        
+
+
+    $(document).ready(function () {
+         $("#id_table_e tbody").empty();
+            $.get("/Triaje/ListaTriaje", {}, function (data) {
+                console.log(data.ObjListaTriaje);
+                $.each(data.ObjListaTriaje, function (index, item) {
+                    $('#id_table_e tbody').append("<tr>" +
+                        "<td width=''>" + item.Nombres + "</td>" +
+                        "<td width=''>" + item.Departamento + "</td>" +
+                        "<td width=''>" + item.NumeroDocumento + "</td>" +
+                        //"<td width=''>" + item.Address  + "</td>" +
+                         "<td id='Est' width='' style='color:red'>" + item.Estado + "</td>" +
+
+                        "<td id='"+item.IdTriaje+"' th='30% !important' >" +
+                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+
+                        "<a id='' onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                        "</td>" +
+                        "</tr>");
+                     
+                    if (item.Estado == "Evaluacion          " ||
+                        item.Estado == "Fallecido           " ||
+                        item.Estado == "Hospitalizado       " ||
+                        item.Estado == "Recuperado          " ||
+                        item.Estado == "Confirmado          "
+                    ) {
+                         $("#" + item.IdTriaje+ " a:first-child").remove();
+                         $('#'+item.IdTriaje + " a:last-child").css("margin-left","4.3rem")
+                         console.log(" llega");
+                     }
+                });
+               
+            });
+               function RegistrarConfirmado() {
         
             
             var datos = {
@@ -328,137 +367,110 @@
       
         
     }
-        
-
-
-    $(document).ready(function () {
-         $("#id_table_e tbody").empty();
-            $.get("/Triaje/ListaTriaje", {}, function (data) {
-                console.log(data.ObjListaTriaje);
-                $.each(data.ObjListaTriaje, function (index, item) {
-                    $('#id_table_e tbody').append("<tr>" +
-                        "<td width=''>" + item.Nombres + "</td>" +
-                        "<td width=''>" + item.Departamento + "</td>" +
-                        "<td width=''>" + item.NumeroDocumento + "</td>" +
-                        //"<td width=''>" + item.Address  + "</td>" +
-                         "<td id='Est' width='' style='color:red'>" + item.Estado + "</td>" +
-
-                        "<td id='"+item.IdTriaje+"' th='30% !important' >" +
-                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
-
-                        "<a id='' onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
-                        "</td>" +
-                        "</tr>");
-                     
-                    if (item.Estado == "Evaluacion          " || item.Estado == "Fallecido           "
-                        || item.Estado == "Hospitalizado           " || item.Estado == "Recuperado           "
-                        || item.Estado == "Confirmado           "
-                    ) {
-                         $("#" + item.IdTriaje+ " a:first-child").remove();
-                         $('#'+item.IdTriaje + " a:last-child").css("margin-left","4.3rem")
-                         console.log(" llega");
-                     }
-                });
-               
-            });
-           
              $(function () {
                 $("#btn-prueba").on("click", function (e) {
+                  
+                    if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                     var url = "/Triaje/Index2"
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').addClass('active');
+                       
+                    });
+                       history.pushState(null, "",url);
+                    }else{
                     e.preventDefault();
                     var url = "/Triaje/Index2"
                     $.get(url).done(function (result) {
                         $("body").html(result);
-                        $('#sidebar').addClass('active');
+                        $('#sidebar').removeClass('active');
                     });
-
+                       history.pushState(null, "",url);  
+                       }
                 });
-            });
-            $(function () {
-                $("#a-btn01").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
+             });
+        function HabilitarSideBar(e,href) {
+               if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                    var url =href;
                     $.get(url).done(function (result) {
                         $("body").html(result);
                         $('#sidebar').addClass('active');
+                       
                     });
+                       history.pushState(null, "",url);
+               }else{
+                    e.preventDefault();
+                    var url =href;
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').removeClass('active');
+                    });
+                      history.pushState(null, "",url);   
+               }
+                   
+        }
 
+           
+        $("#a-btn01").on("click", function (e) {
+                var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+               
                 });
-            });
+           
 
 
             $(function () {
                 $("#a-btn2").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                     
                 });
             });
 
 
              $(function () {
                 $("#a-btn3").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                     
                 });
              });
 
 
             $(function () {
                 $("#a-btn4").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                     
                 });
             });
 
 
               $(function () {
                 $("#a-btn5").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                   
                 });
               });
 
 
                 $(function () {
                 $("#a-btn6").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
+  var url=$(this).attr("href");
+                    HabilitarSideBar(e, url);
+                  
 
                 });
                 });
 
               $(function () {
                 $("#a-btn7").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                       var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                    
                 });
                       
              });

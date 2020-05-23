@@ -300,79 +300,110 @@
     $(document).ready(function () {
             $(function () {
                 $("#RegistrarHospitalizadoRF").on("click", function (e) {
-                    e.preventDefault();
+                    if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
                     var url = "/Triaje/Index5";
                     $.get(url).done(function (result) {
                         $("body").html(result);
                         $('#sidebar').addClass('active');
+                       
                     });
+                      history.pushState(null, "",url); 
+                    }else{
+                    e.preventDefault();
+                     var url = "/Triaje/Index5";
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').removeClass('active');
+                    });
+                       history.pushState(null, "",url);  
+                }
+                    
+                });
+             });
+      
+                function HabilitarSideBar(e,href) {
+               if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                    var url =href;
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').addClass('active');
+                       
+                    });
+                       history.pushState(null, "",url);
+               }else{
+                    e.preventDefault();
+                    var url =href;
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').removeClass('active');
+                    });
+                      history.pushState(null, "",url);   
+               }
+                   
+        }
+
+           
+        $("#a-btn1").on("click", function (e) {
+                var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                
+                });
+           
+
+
+            $(function () {
+                $("#a-btn2").on("click", function (e) {
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+
+                });
+            });
+
+
+             $(function () {
+                $("#a-btn3").on("click", function (e) {
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
 
                 });
              });
+
+
             $(function () {
-                $("#a-btn1").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
-                $("#a-btn2").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
-                $("#a-btn3").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
-                });
                 $("#a-btn4").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
 
                 });
+            });
+
+
+              $(function () {
                 $("#a-btn5").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
 
                 });
+              });
+
+
+                $(function () {
                 $("#a-btn6").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
+  var url=$(this).attr("href");
+                    HabilitarSideBar(e,url)
 
                 });
+                });
+
+              $(function () {
                 $("#a-btn7").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
+                       var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
 
                 });
+                      
              });
            });
 

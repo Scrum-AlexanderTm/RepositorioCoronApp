@@ -4,71 +4,142 @@
 }
 
 
-<style>
-    #map {
-        height: 350px;
-    }
+
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+      }
+     
+    </style>
+    <div class="row">
+        <div class="col-md-6">
+            <select name="cmbperiodo" id="periodo" class="form-control">
+                <option value="0">Seleccione Departamento</option>
+            </select>
+
+        </div>
+        <div class="col-md-6">
+           
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="map">
+
+        </div>
+    </div>
+</div>
+    
+    <script>
+    
+var map;
+var markers = [];
+        var infoWindow;
+       
+function initMap() {
+    var center = new google.maps.LatLng(-11.8390784, -77.103104);
+
+    var mapOptions = {
+        zoom: 6,
+        center: center,
+        
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
 
 
+    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+ 
+    $.get("/Maps/GetAllLocation", {}, function(data) {
+        infoWindow = new google.maps.InfoWindow();
+        
+        $.each(data.ObjListaMaps, function(index, val) {
+            if(val.Lat!='' && val.Long !='')
+            {                
+                var con =0;
+                //Check Markers array for duplicate position and offset a little
+               // var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                var geocoder = new google.maps.Geocoder();
+                // Set the coordonates of the new point
+                var ArrayPeriodos = new Array()
+                var latLng = new google.maps.LatLng(val.Lat,val.Long);
+                geocoder.geocode({ 'latLng': latLng }, function (results, status) {
+                    if (status == google.maps.GeocoderStatus.OK) {
+                        $('#IdDir').text(results[0]['formatted_address']);
+                        infowindow.setContent(results[0].formatted_address);
+                        function extractFromAdress(components, type){
+                         for (var i=0; i<components.length; i++)
+                            for (var j=0; j<components[i].types.length; j++)
+                              if (components[i].types[j]==type) return components[i].long_name;
+                                 return "";
+                         }
+                        var country = extractFromAdress(results[0].address_components, "locality");
+                        ArrayPeriodos[con] = country;
+                        var result = $.unique(ArrayPeriodos)
+                        
+                        $("#periodo").append("<option  value='"+ result +"'>" + result + "</option>")
+                        con++;
+                       
+                       
+                    } else {
+                     
+                    }
+                });
+              
+            var iconName = "../Icons/uno.png";
+                // Initialize the new marker
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: latLng,
+                    icon: iconName
+                });
 
-</style>
+              var contentString = 'Direccion no encontrada'  ;
 
-<h1>Personas Infectadas</h1>
-<div id="map"></div>
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
 
-<script>
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: -11.8390784, lng:  -77.103104 },
-            zoom: 6
+                // Add the marker to the array
+                markers.push(marker);
+            }
         });
 
-    $.get("/Maps/GetAllLocation",{}, function (data) {
-       
-        var iconName ="../Icons/tos.png";
-        $.each(data.ObjListaMaps, function (index, item) {
-            
-            var marker = new google.maps.Marker({
-                position: { lat: item.Lat, lng: item.Long },
-                map: map,
-                animation: google.maps.Animation.DROP,
-                icon :iconName
-    
-           
+        // Make a cluster with the markers from the array
+        var markerCluster = new MarkerClusterer(map, markers,{imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      
+        
+    });
+}
+
+function markerOpen(markerid) {
+    map.setZoom(30);
+    map.panTo(markers[markerid].getPosition());
+    google.maps.event.trigger(markers[markerid],'click');
+    switchView('map');
+}
+
+$( document ).ready(function() {
+        $('#periodo').click(function () { 
+            var values231 = []; $.each($('option'), function () {
+                var flag = false; var thishtml = $(this).html();
+                for (var i = 0; i < values231.length; i++)
+                {
+                    if (thishtml == values231[i])
+                    { $(this).hide(); flag = true; }
+                } if (!flag) { values231.push(thishtml); }
             });
-            var contentString = '<div id="content">' +
-                '<div id="siteNotice">' +
-                '</div>' +
-                '<h1 id="firstHeading" class="firstHeading">' + item.Address + '</h1>' +
-                '<div id="bodyContent">' +
-                '<p><b>' + item.Address + '</b>,  Persona infectada </p>';
-
-           var infowindow = new google.maps.InfoWindow({
-                content: contentString
-            });
-            var mdl = marker;
-          google.maps.event.addListener(marker, 'mouseover', (function (mdl) {
-                return function () {
-                    infowindow.open(map, marker);
-                }
-          })(marker));
-
-            google.maps.event.addListener(marker, 'mouseout', (function (mdl) {
-                return function () {
-                    infowindow.close();
-                }
-
-            })(marker));
+        });
+    });  
+    </script>
+    <!-- Replace following script src -->
+    <script src="https://cdn.rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js">
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC-w2WPpFKxahplvlItRGHZ5cuK2fUeZI&callback=initMap"
+            async defer></script>
 
 
-       });
 
-    })
- 
-    }
-</script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC-w2WPpFKxahplvlItRGHZ5cuK2fUeZI&callback=initMap"
-        async defer></script>
 

@@ -166,6 +166,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Icons\uno.png" />
     <Content Include="Icons\maps.jpg" />
     <Content Include="Icons\one.png" />
     <Content Include="Icons\three.png" />
@@ -176,11 +177,13 @@
     <Content Include="Image\jquery-min.js" />
     <Content Include="Image\maps.png" />
     <Content Include="Image\triaje.jpg" />
-    <Content Include="Image\user.png" />
+    <Content Include="Image\m1.png" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\queryloader2.min.js" />
+    <Content Include="Scripts\script.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

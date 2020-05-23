@@ -8,18 +8,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/jquery")
-   
+
     @Scripts.Render("~/bundles/bootstrap")
 
-    @Styles.Render("~/Content/css")
+
 
 
 
     @RenderSection("scripts", required: false)
     <style>
         body {
-        padding-right:0px !important
+            padding-right: 0px !important
         }
     </style>
 </head>
@@ -63,9 +64,8 @@
 
 
                             <li class="active">
-                                <a href="#">
-                                    <span class="v-icon notranslate v-icon--svg theme--light" style="        margin-right: 30px;
-">
+                                <a id="a-btnHome" href="/Home/menu" class="link-layout">
+                                    <span class="v-icon" style="margin-right: 30px;">
                                         <svg viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
                                             <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
                                         </svg>
@@ -75,7 +75,7 @@
                             </li>
 
                             <li>
-                                <a id="a-btnMaps" href="../Maps/Index">
+                                <a id="a-btnMaps" href="/Maps/Index" class="link-layout">
                                     <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #f44336!important;
     caret-color: #f44336!important;">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
@@ -86,7 +86,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a id="a-btnTriaje" href="/Triaje/Index">
+                                <a id="a-btnTriaje" href="/Triaje/Index" class="link-layout">
                                     <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color:  !important;
     caret-color: #f44336!important;">
                                         <svg xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a id="a-btn1" href="/Usuario/Index">
+                                <a id="a-btnUsuario" href="/Usuario/Index" class="link-layout">
                                     <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #1ae6e6 !important;
     caret-color: #f44336!important;">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
@@ -147,7 +147,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="#" class="link-layout">
                                     <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #00ff21 !important;
     caret-color: #f44336!important;">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 30 30" width="30px" height="30px">
@@ -163,7 +163,7 @@
                     {
 
                         <li class="active">
-                            <a href="#">
+                            <a id="a-btnHome" href="/Home/menu" class="link-layout">
                                 <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;">
                                     <svg viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
                                         <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
@@ -173,7 +173,7 @@
                             </a>
                         </li>
                         <li>
-                            <a id="a-btnMaps" href="/Maps/Index">
+                            <a id="a-btnMaps" href="/Maps/Index" class="link-layout">
                                 <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #f44336!important;
     caret-color: #f44336!important;">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
@@ -184,7 +184,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="#" class="link-layout">
                                 <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #00ff21 !important;
     caret-color: #f44336!important;">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 30 30" width="30px" height="30px">
@@ -200,7 +200,7 @@
                 {
 
                     <li class="active">
-                        <a href="#">
+                        <a id="a-btnHome" href="/Home/menu" class="link-layout">
                             <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;">
                                 <svg viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
                                     <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
@@ -210,7 +210,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="a-btnMaps" href="/Maps/Index">
+                        <a id="a-btnMaps" href="/Maps/Index" class="link-layout">
                             <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #f44336!important;
     caret-color: #f44336!important;">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
@@ -221,7 +221,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="#" class="link-layout">
                             <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #00ff21 !important;
     caret-color: #f44336!important;">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 30 30" width="30px" height="30px">
@@ -408,6 +408,10 @@
     </div>
     <script type="text/javascript">
         $(document).ready(function () {
+
+        
+
+
             $('#sidebarCollapse').on('click', function () {
                 $('#sidebar').toggleClass('active');
                 $(this).toggleClass('active');
@@ -418,6 +422,31 @@
 
           
             
+             $(function () {
+                $("#a-btnUsuario").on("click", function (e) {
+                    e.preventDefault();
+                    var url = $(this).attr("href");
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').addClass('active');
+                      
+                    });
+                  
+            history.pushState(null, "",url);
+                    
+                });
+            });
+             $(function () {
+                $("#a-btnHome").on("click", function (e) {
+                    e.preventDefault();
+                    var url = $(this).attr("href");
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').addClass('active');
+                    });
+                      history.pushState(null, "",url);
+                });
+            });
             $(function () {
                 $("#a-btnTriaje").on("click", function (e) {
                     e.preventDefault();
@@ -426,7 +455,7 @@
                         $("body").html(result);
                         $('#sidebar').addClass('active');
                     });
-
+                      history.pushState(null, "",url);
                 });
             });
             $(function () {
@@ -437,7 +466,7 @@
                         $("body").html(result);
                         $('#sidebar').addClass('active');
                     });
-
+                      history.pushState(null, "",url);
                 });
             });
         });

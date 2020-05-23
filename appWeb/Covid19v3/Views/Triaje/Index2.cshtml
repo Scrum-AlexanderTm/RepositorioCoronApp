@@ -154,6 +154,7 @@
 </div>
 <!-- Modal -->
 <script type="text/javascript">
+    $(document).ready(function () {
             $("#id_table_e tbody").empty();
             $.get("/Triaje/Lista", {}, function (data) {
                 console.log(data.ObjListaTriaje);
@@ -335,113 +336,119 @@
             });
         habilitar();
 
-    }
+        }
+        
+           $(function () {
+               $("#btn-prueba").on("click", function (e) {
 
-
-
-$(document).ready(function () {
-
-                $(function () {
-                $("#btn-prueba").on("click", function (e) {
+                   if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                     var url = "/Triaje/Index2"
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').addClass('active');
+                       
+                    });
+                       history.pushState(null, "",url);
+                    }else{
                     e.preventDefault();
                     var url = "/Triaje/Index2"
                     $.get(url).done(function (result) {
                         $("body").html(result);
-                        $('#sidebar').addClass('active');
+                        $('#sidebar').removeClass('active');
                     });
+                         history.pushState(null, "",url);
+                       }
+                    
 
                 });
             });
-            $(function () {
-                $("#a-btn1").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
+
+         
+                function HabilitarSideBar(e,href) {
+               if ($('#sidebar').hasClass('active')){
+                     e.preventDefault();
+                    var url =href;
                     $.get(url).done(function (result) {
                         $("body").html(result);
                         $('#sidebar').addClass('active');
+                       
                     });
+                        history.pushState(null, "",url);
+               }else{
+                    e.preventDefault();
+                    var url =href;
+                    $.get(url).done(function (result) {
+                        $("body").html(result);
+                        $('#sidebar').removeClass('active');
+                    });
+                       history.pushState(null, "",url);   
+               }
+                   
+        }
 
+           
+        $("#a-btn1").on("click", function (e) {
+                var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                 
                 });
-            });
+           
 
 
             $(function () {
                 $("#a-btn2").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+               
                 });
             });
 
 
              $(function () {
                 $("#a-btn3").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                    
                 });
              });
 
 
             $(function () {
                 $("#a-btn4").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                     var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                   
                 });
             });
 
 
               $(function () {
                 $("#a-btn5").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                    var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                      
                 });
               });
 
 
                 $(function () {
                 $("#a-btn6").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+  var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                   
                 });
                 });
 
-                    $(function () {
+              $(function () {
                 $("#a-btn7").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-
+                       var url=$(this).attr("href");
+                    HabilitarSideBar(e,url);
+                    
                 });
                       
              });
-           });
+     });
 
 
 
