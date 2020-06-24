@@ -42,7 +42,7 @@ namespace Covid19v3.Models
         private System.String _Respuesta3;
         private System.String _Respuesta4;
         private System.String _Respuesta5;
-        private System.String _Respuesta6=default;
+        private System.String _Respuesta6;
         private System.String _FechaTriaje;
         private System.String _Longitud;
         private System.String _Latitud;
@@ -155,7 +155,7 @@ namespace Covid19v3.Models
         public System.String Respuesta6
         {
             get { return this._Respuesta6; }
-            set {this._Respuesta5 = value == null ? "" : value;}
+            set {this._Respuesta6 = value == null ? "" : value;}
         } 
 
         [DataMember(EmitDefaultValue = false)]

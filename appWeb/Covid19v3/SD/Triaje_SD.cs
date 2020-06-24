@@ -431,8 +431,8 @@ namespace Covid19v3.SD
             ocomando.Parameters.Add("@Respuesta4", SqlDbType.VarChar, 250).Value = pTriaje_BE.Respuesta4;
             ocomando.Parameters.Add("@Respuesta5", SqlDbType.VarChar, 250).Value = pTriaje_BE.Respuesta5;
             ocomando.Parameters.Add("@Respuesta6", SqlDbType.VarChar, 250).Value = pTriaje_BE.Respuesta6;
-            //ocomando.Parameters.Add("@Latitud", SqlDbType.VarChar, 250).Value = pTriaje_BE.Latitud;
-            //ocomando.Parameters.Add("@Longitud", SqlDbType.VarChar, 250).Value = pTriaje_BE.Longitud;
+            ocomando.Parameters.Add("@Latitud", SqlDbType.VarChar, 250).Value = pTriaje_BE.Latitud;
+            ocomando.Parameters.Add("@Longitud", SqlDbType.VarChar, 250).Value = pTriaje_BE.Longitud;
             ////ocomando.Parameters.Add("@IdMapa", SqlDbType.VarChar, 250).Value = pTriaje_BE.IdMapa;
 
 
