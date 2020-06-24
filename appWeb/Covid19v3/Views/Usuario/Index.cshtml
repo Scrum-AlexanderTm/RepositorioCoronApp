@@ -118,7 +118,7 @@
                 <div class="modal-content">
                     <div style="background-color:red" class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h4 style="color:white" class="modal-title">Editar Ciudadano</h4>
+                        <h4 style="color:white" class="modal-title">Registrar Ciudadano</h4>
                     </div>
                     <div class="modal-body">
                         <div class="container" style="width:100%;">
@@ -127,28 +127,27 @@
 
 
                                     <form action="/Usuario/Index" method="post">
-                                        <input name="__RequestVerificationToken" type="hidden" value="PwbKzRFSKqfbL1rDZjsyJ7y1cbVd9O4bL6dL_1GgFVocDlvIDeSuZ1j0DabpMvl1VMFDesB0EQde9wxfkZ5H9YkEn-WzVEazD_OzJig_NDo1">                                    <input type="hidden" class="form-control" id="IdUsuarioE" value="27">
-                                        <div class="form-group" style="padding-bottom:2rem">
+                                           <div class="form-group" style="padding-bottom:2rem">
                                             <label class="col-lg-2 control-label">Nombres</label>
                                             <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="NombresE" placeholder="Nombres">
+                                                <input type="text" class="form-control" id="NombresA" placeholder="Nombres">
                                             </div>
                                         </div>
                                         <div class="form-group" style="padding-bottom:2rem">
                                             <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
                                             <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="NumeroE" placeholder="Tipo">
+                                                <input type="text" class="form-control" id="NumeroA" placeholder="Tipo">
                                             </div>
                                         </div>
                                         <div class="form-group" style="padding-bottom:2rem">
                                             <label style="float:left" for="Fecha" class="col-lg-2 control-label">Fecha Nac</label>
                                             <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="FechaE" placeholder="fecha">
+                                                <input type="text" class="form-control" id="FechaA" placeholder="fecha">
                                             </div>
                                         </div>
                                         <div class="form-group" style="padding-bottom:2rem">
                                             <div class="col-lg-offset-2 col-lg-10">
-                                                <button type="submit" class="btn btn-default" onclick="Editar();">Editar</button>
+                                                <button type="submit" class="btn btn-default" onclick="Agregar();">Regitrar</button>
                                             </div>
                                         </div>
                                     </form>
