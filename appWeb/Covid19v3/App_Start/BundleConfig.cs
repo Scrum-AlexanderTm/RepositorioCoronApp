@@ -21,12 +21,14 @@ namespace Covid19v3
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/script.js"));
+                      "~/Scripts/script.js",
+                      "~/Scripts/bootstrapValidator.js"));
            
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         
                       "~/Content/bootstrap.css",
+                      "~/Content/bootstrapValidator.css",
                        "~/Content/style.css",
                       "~/Content/Site.css"
                        

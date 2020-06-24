@@ -6,189 +6,196 @@
 
 
 
+<link rel="stylesheet" href="https://rawgit.com/Eonasdan/bootstrap-datetimepicker/master/build/css/bootstrap-datetimepicker.min.css
+
+" />
 
 
 
+<div class="row">
+    <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
+        <div class="first-row">
 
-    <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 col-md-6 col-md-offset-1 col-sm-10 col-sm-offset-1">
-            <div class="first-row">
-
-                <h2 class="first-login text-center">Listado de Ciudadanos Registrados</h2>
-                <hr />
-            </div>
-            <button  data-backdrop='false' data-dismiss='modal' data-toggle='modal'  data-target='#myModalCiudadano' class="btn btn-primary">Crear Ciudadano</button>
-            <br />
+            <h2 class="first-login text-center">Listado de Ciudadanos Registrados</h2>
             <hr />
-            <table id="id_table_e" class="table table-striped">
-                <thead>
-                    <tr style="">
-                        <th width="10%">
-                            ID
-                        </th>
-                        <th width="30%">
-                            Nombres y Apellidos
-                        </th>
-                        <th width="20%">
-                            Fec Nacimiento
-                        </th>
-                        <th width="20%">
-                            Tipo Documento
-                        </th>
-
-                        <th width="30%">
-
-                        </th>
-                    </tr>
-
-                </thead>
-                <tbody style=""></tbody>
-            </table>
-            <a href="../Home/Index">Regresar</a>
         </div>
-        <!-- Modal -->
+        <button data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModalCiudadano' class="btn btn-primary">Crear Ciudadano</button>
+        <br />
+        <hr />
+        <table id="id_table_e" class="table table-striped">
+            <thead>
+                <tr style="">
+                    <th width="10%">
+                        ID
+                    </th>
+                    <th width="30%">
+                        Nombres y Apellidos
+                    </th>
+                    <th width="20%">
+                        Fec Nacimiento
+                    </th>
+                    <th width="20%">
+                        Tipo Documento
+                    </th>
 
-        <div style="z-index:999999" id="myModal" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModal">
-            <div class="modal-dialog">
+                    <th width="30%">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div style="background-color:red" class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 style="color:white" class="modal-title">Editar Ciudadano</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12">
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody style=""></tbody>
+        </table>
+        <a href="../Home/Index">Regresar</a>
+    </div>
+    <!-- Modal -->
+
+    <div style="z-index:999999" id="myModal" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModal">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div style="background-color:red" class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 style="color:white" class="modal-title">Editar Ciudadano</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
 
 
-                                    @using (Html.BeginForm())
-                                    {
-                                        @Html.AntiForgeryToken()
-                                        <input type="hidden" class="form-control" id="IdUsuarioE">
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <label class="col-lg-2 control-label">Nombres</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="NombresE"
-                                                       placeholder="Nombres">
-                                            </div>
+                                @using (Html.BeginForm())
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" class="form-control" id="IdUsuarioE">
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <label class="col-lg-2 control-label">Nombres</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="NombresE"
+                                                   placeholder="Nombres">
                                         </div>
+                                    </div>
 
 
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="NumeroE"
-                                                       placeholder="Tipo">
-                                            </div>
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="NumeroE"
+                                                   placeholder="Tipo">
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <label style="float:left" for="Fecha" class="col-lg-2 control-label">Fecha Nac</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="FechaE"
-                                                       placeholder="fecha">
-                                            </div>
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <label style="float:left" for="Fecha" class="col-lg-2 control-label">Fecha Nac</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="FechaE"
+                                                   placeholder="fecha">
                                         </div>
+                                    </div>
 
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <div class="col-lg-offset-2 col-lg-10">
-                                                <button type="submit" class="btn btn-default" onclick="Editar();">Editar</button>
-                                            </div>
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button type="button" class="btn btn-default" onclick="Editar();">Editar</button>
                                         </div>
-                                    }
-                                </div>
+                                    </div>
+                                }
                             </div>
                         </div>
                     </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
 
-            </div>
-        </div>
-
-        <div style="z-index:999999" id="myModalCiudadano" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalCiudadano">
-            <div class="modal-dialog">
-
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div style="background-color:red" class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">×</button>
-                        <h4 style="color:white" class="modal-title">Registrar Ciudadano</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="container" style="width:100%;">
-                            <div class="row">
-                                <div class="col-md-12">
-
-
-                                    <form action="/Usuario/Index" method="post">
-                                           <div class="form-group" style="padding-bottom:2rem">
-                                            <label class="col-lg-2 control-label">Nombres</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="NombresA" placeholder="Nombres">
-                                            </div>
-                                        </div>
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="NumeroA" placeholder="Tipo">
-                                            </div>
-                                        </div>
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <label style="float:left" for="Fecha" class="col-lg-2 control-label">Fecha Nac</label>
-                                            <div class="col-lg-10">
-                                                <input type="text" class="form-control" id="FechaA" placeholder="fecha">
-                                            </div>
-                                        </div>
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <div class="col-lg-offset-2 col-lg-10">
-                                                <button type="submit" class="btn btn-default" onclick="Agregar();">Regitrar</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
-
             </div>
+
         </div>
     </div>
 
+    <div style="z-index:999999" id="myModalCiudadano" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalCiudadano">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div style="background-color:red" class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 style="color:white" class="modal-title">Registrar Ciudadano</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container" style="width:100%;">
+                        <div class="row">
+                            <div class="col-md-12">
+
+
+                                <form id="formRegistrarCiu" action="/Usuario/Index" method="post">
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <label class="col-lg-2 control-label">Nombres</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="NumeroA" placeholder="Tipo" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <label style="float:left" for="Fecha" class="col-lg-2 control-label">Fecha Nac</label>
+                                        <div class="col-lg-10">
+                                            <input type="text" class="form-control" id="FechaA" placeholder="fecha" name="fecha" data-date-format="YYYY-MM-DD">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button type="submit" class="btn btn-default" onclick="Agregar();">Regitrar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="https://rawgit.com/Eonasdan/bootstrap-datetimepicker/master/src/js/bootstrap-datetimepicker.js"></script>
+
 <script type="text/javascript">
-            $("#id_table_e tbody").empty();
-            $.get("/Usuario/Lista", {}, function (data) {
-                console.log(data.ObjListaUsuario);
-                $.each(data.ObjListaUsuario, function (index, item) {
-                    $('#id_table_e tbody').append("<tr>" +
-                        "<td width=''>" + item.IdUsuario + "</td>" +
-                        "<td width=''>" + item.Nombres + "</td>" +
-                        "<td width=''>" + item.FechaNacimiento + "</td>" +
-                        "<td width=''>" + item.TipoDocumento + "</td>" +
-                        //"<td width=''>" + item.Telefono + "</td>" +
+
+    cargaTabla();
+    function cargaTabla() {
+        $("#id_table_e tbody").empty();
+        $.get("/Usuario/Lista", {}, function (data) {
+            console.log(data.ObjListaUsuario);
+            $.each(data.ObjListaUsuario, function (index, item) {
+                $('#id_table_e tbody').append("<tr>" +
+                    "<td width=''>" + item.IdUsuario + "</td>" +
+                    "<td width=''>" + item.Nombres + "</td>" +
+                    "<td width=''>" + item.FechaNacimiento + "</td>" +
+                    "<td width=''>" + item.TipoDocumento + "</td>" +
+                    //"<td width=''>" + item.Telefono + "</td>" +
 
 
-                        "<td width='30% !important' >" +
-                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal'  data-target='#myModal' onclick = 'Obtener(" + item.IdUsuario + ")'> <span class='glyphicon glyphicon-pencil'></span></a> " +
-                        "<a onclick='Delete(" + item.IdUsuario + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
-                        "</td>" +
-                         "</tr>");
+                    "<td width='30% !important' >" +
+                    "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal'  data-target='#myModal' onclick = 'Obtener(" + item.IdUsuario + ")'> <span class='glyphicon glyphicon-pencil'></span></a> " +
+                    "<a onclick='Delete(" + item.IdUsuario + "," + JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                    "</td>" +
+                    "</tr>");
 
-                });
             });
+        });
+    }
 
-    function Delete(id,nombre) {
-        if (confirm('Desea eliminar a '+ nombre + ' ?') == true) {
+    function Delete(id, nombre) {
+        if (confirm('Desea eliminar a ' + nombre + ' ?') == true) {
             $.ajax({
                 url: "/Usuario/Elimina?pCodigoUsuario=" + id,
                 data: id,               /*aqui envias los valores a tu archivo*/
@@ -196,60 +203,72 @@
                 type: 'post',
                 cache: false,
                 success: function (response) {
-
-                        window.location.href = '@Url.Action("Index","Usuario")';
+                    cargaTabla();
 
                 }
             });
         }
     }
-  
+
     function Editar() {
 
-            var datos = {
-                    pTipoTransaccion: 'A',
-                    IdUsuario: $("#IdUsuarioE").val(),
-                    Nombres: $("#NombresE").val(),
-                    FechaNacimiento: $("#FechaE").val(),
-                    TipoDocumento: $("#NumeroE").val()
+        var datos = {
+            pTipoTransaccion: 'A',
+            IdUsuario: $("#IdUsuarioE").val(),
+            Nombres: $("#NombresE").val(),
+            FechaNacimiento: $("#FechaE").val(),
+            TipoDocumento: $("#NumeroE").val()
 
-                };
-            $.ajax({
-                url: "/Usuario/RegistraModifica",
-                data: datos,               /*aqui envias los valores a tu archivo*/
-                dataType: 'json',
-                type: 'post',
-                cache: false,
-                success: function (data) {
-                    console.log(data);
+        };
+        $.ajax({
+            url: "/Usuario/RegistraModifica",
+            data: datos,               /*aqui envias los valores a tu archivo*/
+            dataType: 'json',
+            type: 'post',
+            cache: false,
+            success: function (data) {
+                $("#myModal").modal('hide');
+                cargaTabla();
+                limpiarregistro();
+                console.log(data);
 
 
-                }
-            });
+            }
+        });
 
     }
+    limpiarregistro();
+    function limpiarregistro() {
+        $("#NombresA").val("");
+        $("#FechaA").val("");
+        $("#NumeroA").val("");
+    }
+    $("#formRegistrarCiu").submit(function (ev) { ev.preventDefault(); });
     function Agregar() {
 
-            var datos = {
-                    pTipoTransaccion: 'N',
-                    IdUsuario: 0,
-                    Nombres: $("#NombresA").val(),
-                    FechaNacimiento: $("#FechaA").val(),
-                    TipoDocumento: $("#NumeroA").val()
+        var datos = {
+            pTipoTransaccion: 'N',
+            IdUsuario: 0,
+            Nombres: $("#NombresA").val(),
+            FechaNacimiento: $("#FechaA").val(),
+            TipoDocumento: $("#NumeroA").val()
 
-                };
-            $.ajax({
-                url: "/Usuario/RegistraModifica",
-                data: datos,               /*aqui envias los valores a tu archivo*/
-                dataType: 'json',
-                type: 'post',
-                cache: false,
-                success: function (data) {
-                    console.log(data);
+        };
+        $.ajax({
+            url: "/Usuario/RegistraModifica",
+            data: datos,               /*aqui envias los valores a tu archivo*/
+            dataType: 'json',
+            type: 'post',
+            cache: false,
+            success: function (data) {
+                $("#myModalCiudadano").modal('hide');
+                cargaTabla();
+                limpiarregistro();
+                console.log(data);
 
 
-                }
-            });
+            }
+        });
 
     }
 
@@ -267,7 +286,60 @@
         });
 
     }
- 
 
 
+
+</script>
+<script type="text/javascript">
+    $(function () {
+
+$('#FechaA').datetimepicker({
+
+				 pickTime: false
+
+			 });
+
+});
+    $('#formRegistrarCiu').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            "nombre": {
+                selector: '#NombresA',
+                validators: {
+                    notEmpty: {
+                        message: 'El nombre es un campo obligatorio'
+                    },
+                    stringLength: {
+                        message: 'El nombre es de 5 a 100 caracteres',
+                        min: 5,
+                        max: 100
+                    }
+                }
+            },
+                        "fecha": {
+                selector: '#FechaA',
+                validators: {
+                    notEmpty: {
+                        message: 'La fecha de nacimiento es requerida y no puede ser vacia'
+                    },
+                    date: {
+
+					 format: 'YYYY-MM-DD',
+
+					 message: 'La fecha de nacimiento no es valida'
+
+				 }
+                    
+                }
+            },
+		
+
+
+        }
+    });
 </script>
