@@ -114,7 +114,7 @@
                     <h5 style="color:white" id="NombreDni"></h5>
                 </div>
                 <div class="modal-body">
-                    <div class="container">
+                    <div class="container"  style="width:100%;">
                         <div class="row">
                             <div class="col-md-12">
                                 <form class="form-horizontal" role="form">
@@ -135,10 +135,10 @@
                                     </div>
                                     <div class="form-group " style="width:100%;padding: 0 1rem;">
                                         <label class=" checkbox-inline checkbox-info">
-                                            <input id="PruebaCheckbox" type="checkbox" value="">Realizar prueba de descarto de Covid19
+                                            <input id="PruebaCheckbox" type="radio" value="">Realizar prueba de descarto de Covid19
 
                                         </label>
-                                        <button id="btn-prueba" onclick="RegistrarPrueba();" style="margin-left:4rem;" type="submit" class="btn btn-info">Evaluación</button>
+                                        <button disabled id="btn-prueba" onclick="RegistrarPruebaS();" style="margin-left:4rem;" type="submit" class="btn btn-info">Evaluación</button>
                                     </div>
                                 </form>
                             </div>
@@ -154,7 +154,7 @@
 </div>
 <!-- Modal -->
 <script type="text/javascript">
-    $(document).ready(function () {
+    
             $("#id_table_e tbody").empty();
             $.get("/Triaje/Lista", {}, function (data) {
                 console.log(data.ObjListaTriaje);
@@ -167,9 +167,9 @@
                          "<td width='' style='color:red'>" + item.Estado + "</td>" +
 
                         "<td width='30% !important' >" +
-                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ");'><span class='glyphicon glyphicon-pencil'></span></a>" +
 
-                        "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                       // "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
                         "</td>" +
                          "</tr>");
 
@@ -190,38 +190,16 @@
                          "<td width='' style='color:red'>" + item.Estado + "</td>" +
 
                         "<td width='30% !important' >" +
-                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ");'><span class='glyphicon glyphicon-pencil'></span></a>" +
 
-                        "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                       // "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
                         "</td>" +
                          "</tr>");
 
                 });
             });
             }
-           function BuscarDocumento2() {
-         var pDocumento=$("#BuscaNumero2").val();
-         $("#id_table_p tbody").empty();
-            $.get("/Triaje/BuscarTriajePorNroDocumentoEvaluacion?pDocumento="+pDocumento, {}, function (data) {
-                console.log(data.ObjListaTriaje);
-                $.each(data.ObjListaTriaje, function (index, item) {
-                    $('#id_table_e tbody').append("<tr>" +
-                        "<td width=''>" + item.Nombres + "</td>" +
-                        "<td width=''>" + item.Departamento + "</td>" +
-                        "<td width=''>" + item.NumeroDocumento + "</td>" +
-                        //"<td width=''>" + item.Address  + "</td>" +
-                         "<td width='' style='color:red'>" + item.Estado + "</td>" +
-
-                        "<td width='30% !important' >" +
-                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
-
-                        "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
-                        "</td>" +
-                         "</tr>");
-
-                });
-            });
-    }
+      
     function Delete(id,nombre) {
         if (confirm('Desea eliminar a?'+nombre) == true) {
             $.ajax({
@@ -242,7 +220,7 @@
     function Detalle() {
     }
 
-    function Obtener(id) {
+      function Obtener(id) {
         $.get("/Triaje/ListarKey?pCodigoTriaje=" + id, {}, function (data) {
             console.log(data.ObjTriaje);
 
@@ -252,7 +230,7 @@
             var z = item.NumeroDocumento ;
             x = y + " - " + z;
             $('#NombreDni').text(x);
-            $('#NombreDni2').text(x);
+         
             $('#IdTriaje').val(item.IdTriaje);
             $('#is1').text("1.- "+item.Respuesta1);
             $('#is2').text("2.- "+item.Respuesta2);
@@ -268,12 +246,16 @@
 
         });
 
-    }
+      }
 
+       $('#PruebaCheckbox').click(function () {
+         $('#btn-prueba').prop('disabled', false);
+        RegistrarPruebaS();
+    });
+       
 
-    function RegistrarPrueba() {
+    function RegistrarPruebaS() {
 
-        if ($('#PruebaCheckbox').is(':checked')) {
              var datos = {
 
                     IdTriaje: $("#IdTriaje").val(),
@@ -292,11 +274,9 @@
 
                 }
             });
-        } else {
-        }
+    } 
 
 
-    }
 
     $('#PositivoCheckbox').click(function () {
          $('#RegistrarConfirmado').prop('disabled', false);
@@ -448,7 +428,7 @@
                 });
                       
              });
-     });
+   
 
 
 

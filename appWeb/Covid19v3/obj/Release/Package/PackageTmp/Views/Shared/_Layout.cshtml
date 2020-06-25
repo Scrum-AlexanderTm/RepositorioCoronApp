@@ -1,5 +1,6 @@
 ﻿@using Covid19v3.Models
 
+
 <!DOCTYPE html>
 <html style="">
 <head>
@@ -16,16 +17,16 @@
 
 
 
-
     @RenderSection("scripts", required: false)
+
     <style>
         body {
-            padding-right: 0px !important
+            padding-right:0px !important
         }
     </style>
 </head>
-
 <body style="">
+    <br>
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
@@ -59,21 +60,24 @@
                     if (Session["CuentaUsuario"] != null)
                     {
                         foreach (var user in (List
-                        <CuentaUsuario>)Session["CuentaUsuario"])
+
+                            <CuentaUsuario>)Session["CuentaUsuario"])
                         {
+
 
 
                             <li class="active">
                                 <a id="a-btnHome" href="/Home/menu" class="link-layout">
-                                    <span class="v-icon" style="margin-right: 30px;">
+                                    <span class="v-icon" style="        margin-right: 30px;
+">
                                         <svg viewBox="0 0 24 24" height="24" width="24" role="img" aria-hidden="true">
                                             <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
                                         </svg>
                                     </span> Home
-                                    
+
+
                                 </a>
                             </li>
-
                             <li>
                                 <a id="a-btnMaps" href="/Maps/Index" class="link-layout">
                                     <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #f44336!important;
@@ -82,6 +86,7 @@
                                             <path d="M12,2C15.31,2 18,4.66 18,7.95C18,12.41 12,19 12,19C12,19 6,12.41 6,7.95C6,4.66 8.69,2 12,2M12,6A2,2 0 0,0 10,8A2,2 0 0,0 12,10A2,2 0 0,0 14,8A2,2 0 0,0 12,6M20,19C20,21.21 16.42,23 12,23C7.58,23 4,21.21 4,19C4,17.71 5.22,16.56 7.11,15.83L7.75,16.74C6.67,17.19 6,17.81 6,18.5C6,19.88 8.69,21 12,21C15.31,21 18,19.88 18,18.5C18,17.81 17.33,17.19 16.25,16.74L16.89,15.83C18.78,16.56 20,17.71 20,19Z"></path>
                                         </svg>
                                     </span> Mapeo de Riesgo
+
 
                                 </a>
                             </li>
@@ -130,8 +135,9 @@
                                         <g></g>
                                         <g></g>
                                         <g></g>
-										</svg>
+											</svg>
                                     </span> Triaje
+
 
                                 </a>
                             </li>
@@ -144,9 +150,10 @@
                                         </svg>
                                     </span> Usuario
 
+
                                 </a>
                             </li>
-                            <li>
+                            @*<li>
                                 <a href="#" class="link-layout">
                                     <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #00ff21 !important;
     caret-color: #f44336!important;">
@@ -155,12 +162,14 @@
                                         </svg>
                                     </span> Departamentos
 
+
                                 </a>
-                            </li>
+                            </li>*@
                         }
                     }
                     else
                     {
+
 
                         <li class="active">
                             <a id="a-btnHome" href="/Home/menu" class="link-layout">
@@ -169,6 +178,7 @@
                                         <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
                                     </svg>
                                 </span> Home
+
 
                             </a>
                         </li>
@@ -181,9 +191,10 @@
                                     </svg>
                                 </span> Mapeo de Riesgo
 
+
                             </a>
                         </li>
-                        <li>
+                        @*<li>
                             <a href="#" class="link-layout">
                                 <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #00ff21 !important;
     caret-color: #f44336!important;">
@@ -192,12 +203,14 @@
                                     </svg>
                                 </span> Departamentos
 
+
                             </a>
-                        </li>
+                        </li>*@
                     }
                 }
                 else
                 {
+
 
                     <li class="active">
                         <a id="a-btnHome" href="/Home/menu" class="link-layout">
@@ -206,6 +219,7 @@
                                     <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"></path>
                                 </svg>
                             </span> Home
+
 
                         </a>
                     </li>
@@ -218,9 +232,10 @@
                                 </svg>
                             </span> Mapeo de Riesgo
 
+
                         </a>
                     </li>
-                    <li>
+                    @*<li>
                         <a href="#" class="link-layout">
                             <span class="v-icon notranslate v-icon--svg theme--light" style="margin-right:30px;color: #00ff21 !important;
     caret-color: #f44336!important;">
@@ -229,9 +244,11 @@
                                 </svg>
                             </span> Departamentos
 
+
                         </a>
-                    </li>
+                    </li>*@
                 }
+
 
 
 
@@ -243,8 +260,10 @@
                     if (Session["CuentaUsuario"] != null)
                     {
                         foreach (var user in (List
-                            <CuentaUsuario>)Session["CuentaUsuario"])
+
+                                <CuentaUsuario>)Session["CuentaUsuario"])
                         {
+
 
 
                             <li>
@@ -255,6 +274,7 @@
                     else
                     {
 
+
                         <li>
                             <a href="/Acceso/Login" class="article">Login</a>
                         </li>
@@ -263,28 +283,28 @@
                 else
                 {
 
+
                     <li>
                         <a href="/Acceso/Login" class="article">Login</a>
                     </li>
                 }
 
+
             </ul>
         </nav>
         <!-- Page Content Holder -->
-        <div id="content" class="container">
+        <div id="content" class="container" style="">
             <nav class="navbar navbar-default">
-                <div class="container-fluid">
+                <div class="">
                     <div class="navbar-header">
-                        <div style="        float: left
-">
-                            <button style="background-color:#fa503f" type="button" id="sidebarCollapse" class="navbar-btn">
+                        <div id="button_bar" style="        float: left">
+                            <button style="background-color:#fa503f;" type="button" id="sidebarCollapse" class="navbar-btn">
                                 <span></span>
                                 <span></span>
                                 <span></span>
                             </button>
                         </div>
-                        <div style="        float: right;
-        padding-left: 2rem;">
+                        <div style="float: right;">
                             <h2 style="margin-top:10px;color:white">Covid 19</h2>
                         </div>
                     </div>
@@ -296,8 +316,10 @@
                                 if (Session["CuentaUsuario"] != null)
                                 {
                                     foreach (var user in (List
-                                            <CuentaUsuario>)Session["CuentaUsuario"])
+
+                                                <CuentaUsuario>)Session["CuentaUsuario"])
                                     {
+
 
 
 
@@ -310,13 +332,15 @@
                                                     <g>
                                                     <path fill="#d9a4fc" d="M14.249,1.027c-0.036,0-0.07,0.009-0.104,0.009c-0.106-0.003-0.211-0.01-0.318-0.009H14.249z M14.085,17.301   c-0.019,0-0.036-0.003-0.055-0.003c-0.014,0-0.027,0.003-0.041,0.003H14.085z M8.137,11.313c0.015-0.003,0.026-0.019,0.042-0.023   c0.941,3.405,3.377,5.953,5.852,6.007c2.254-0.104,5.022-2.606,5.944-5.994c0.424,0.026,0.848-0.474,0.967-1.17   c0.123-0.726-0.135-1.374-0.572-1.449c-0.028-0.005-0.057,0.013-0.084,0.014c-0.127-5.603-2.789-7.579-6.141-7.664   C10.688,1.051,7.593,3.453,7.789,8.7c-0.033,0-0.064-0.021-0.096-0.015C7.254,8.76,6.998,9.408,7.121,10.134   C7.241,10.858,7.697,11.386,8.137,11.313z M18.688,18.27l-3.141,6.146l-0.496-3.997l0.775-0.636h-1.878h-1.717l0.776,0.636   l-0.497,3.997L9.373,18.27C3.917,19.005,0,21.343,0,27.027h28.055C28.057,21.342,24.141,19.006,18.688,18.27z" />
 
-																</g>
-															</svg>
+																	</g>
+																</svg>
                                                 </span>@user.Usuarios.Nombres
+
 
                                             </a>
                                         </li>
                                     }
+
 
                                     <li>
                                         <a style="background-color:transparent !important" class="cart-icon cart-btn" onclik
@@ -339,6 +363,7 @@
                                 {
 
 
+
                                     <li>
                                         <a style="background-color:transparent !important;text-align:center" class="cart-icon cart-btn" onclik
                                            href="@Url.Action("Login", "Acceso")">
@@ -353,7 +378,7 @@
 
                                                 <polygon style="fill:#415E72;" points="240.711,286.194 193.573,282.867 193.573,267.009 240.711,263.681 " />
 
-															</svg>
+																</svg>
                                             </span>
                                             <span style="display:none"></span>
                                         </a>
@@ -365,6 +390,7 @@
                             }
                             else
                             {
+
 
                                 <li>
                                     <a style="background-color:transparent !important;text-align:center" class="cart-icon cart-btn" onclik
@@ -380,7 +406,7 @@
 
                                             <polygon style="fill:#415E72;" points="240.711,286.194 193.573,282.867 193.573,267.009 240.711,263.681 " />
 
-															</svg>
+																</svg>
                                         </span>
                                         <span style="display:none"></span>
                                     </a>
@@ -389,88 +415,28 @@
 
 
 
+
                         </ul>
                     </div>
                 </div>
             </nav>
-
+           
 
             @RenderBody()
+
 
             <footer class="footer" style="">
                 <p style="text-align: center;
                          padding-top: 5px;
                           font-size: 20px">
                     <span style="color: white">#EsteVirus</span> Lo paramos todos
+
                 </p>
             </footer>
         </div>
     </div>
     <script type="text/javascript">
-        $(document).ready(function () {
-
-        
-
-
-            $('#sidebarCollapse').on('click', function () {
-                $('#sidebar').toggleClass('active');
-                $(this).toggleClass('active');
-                $('.footer').toggleClass('active');
-
-
-            });
-
-          
-            
-             $(function () {
-                $("#a-btnUsuario").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                      
-                    });
-                  
-            history.pushState(null, "",url);
-                    
-                });
-            });
-             $(function () {
-                $("#a-btnHome").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-                      history.pushState(null, "",url);
-                });
-            });
-            $(function () {
-                $("#a-btnTriaje").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-                      history.pushState(null, "",url);
-                });
-            });
-            $(function () {
-                $("#a-btnMaps").on("click", function (e) {
-                    e.preventDefault();
-                    var url = $(this).attr("href");
-                    $.get(url).done(function (result) {
-                        $("body").html(result);
-                        $('#sidebar').addClass('active');
-                    });
-                      history.pushState(null, "",url);
-                });
-            });
-        });
-
+       
 
     </script>
 </body>
