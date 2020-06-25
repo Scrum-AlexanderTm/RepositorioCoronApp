@@ -3,6 +3,7 @@
     ViewBag.Title = "Index";
 }
 <style>
+ 
     #exTab1 .tab-content {
         color: white;
         background-color: #428bca;
@@ -32,6 +33,88 @@
         background-color: #428bca;
         padding: 5px 15px;
     }
+    /* Always set the map height explicitly to define the size of the div
+    * element that contains the map. */
+    #map {
+        height: 400px;
+
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    #infowindow-content .title {
+        font-weight: bold;
+    }
+
+    #infowindow-content {
+        display: none;
+    }
+
+    #map #infowindow-content {
+        display: inline;
+    }
+
+    .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+     
+  
+    }
+
+    #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+    }
+
+    .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+    }
+
+        .pac-controls label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+    #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+    }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+
+    #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+    }
 </style>
 <div class="row">
     <br />
@@ -41,7 +124,7 @@
             <h2 class="first-login text-center">Listado de Triajes Registrados</h2>
             <hr />
         </div>
-        <button data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModalTriaje' class="btn btn-primary">Crear Triaje</button>
+        <button data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModalTriajeE' class="btn btn-primary">Crear Triaje</button>
         <br />
         <hr />
         <div id="exTab2">
@@ -113,7 +196,7 @@
 
     </div>
 
-    <div style="z-index:999999" id="myModalTriaje" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalCiudadano">
+    <div style="z-index:999999" id="myModalTriajeE" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalTriajeE">
         <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
@@ -129,297 +212,313 @@
 
 
                                 <form id="formRegistrarTriaje" action="/Triaje/Index" method="post">
-                                   
-                                    <div class="form-group" style="padding-bottom:2rem">
+
+                                    <div class="form-group" style="">
                                         <div class="col-md-6">
                                             <label class="col-lg-4 control-label">Nombres</label>
                                             <div class="col-lg-8">
                                                 <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
                                             </div>
-                                            <label style="float:left !important" for="Tipo" class="col-lg-4 control-label">Departamento</label>
+                                            <label style="float:left !important" for="departamento" class="col-lg-4 control-label">Departamento</label>
                                             <div class="col-lg-8">
-                                                <select id="region" name="region" class="form-control">
-                                                <option class="fbra_selectOption" value=""> selecciona un departamento</option>
-                                                <option class="fbra_selectOption" value="ANCASH">ANCASH</option>
-                                                <option class="fbra_selectOption" value="APURIMAC">APURIMAC</option>
-                                                <option class="fbra_selectOption" value="AREQUIPA">AREQUIPA</option>
-                                                <option class="fbra_selectOption" value="AYACUCHO">AYACUCHO</option>
-                                                <option class="fbra_selectOption" value="CAJAMARCA">CAJAMARCA</option>
-                                                <option class="fbra_selectOption" value="CUZCO">CUZCO</option>
-                                                <option class="fbra_selectOption" value="HUANCAVELICA">HUANCAVELICA</option>
-                                                <option class="fbra_selectOption" value="HUANUCO">HUANUCO</option>
-                                                <option class="fbra_selectOption" value="ICA">ICA</option>
-                                                <option class="fbra_selectOption" value="JUNIN">JUNIN</option>
-                                                <option class="fbra_selectOption" value="LA LIBERTAD">LA LIBERTAD</option>
-                                                <option class="fbra_selectOption" value="LAMBAYEQUE">LAMBAYEQUE</option>
-                                                <option class="fbra_selectOption" value="LIMA">LIMA</option>
-                                                <option class="fbra_selectOption" value="LORETO">LORETO</option>
-                                                <option class="fbra_selectOption" value="MOQUEGUA">MOQUEGUA</option>
-                                                <option class="fbra_selectOption" value="PASCO">PASCO</option>
-                                                <option class="fbra_selectOption" value="PIURA">PIURA</option>
-                                                <option class="fbra_selectOption" value="PUNO">PUNO</option>
-                                                <option class="fbra_selectOption" value="SAN MARTIN">SAN MARTIN</option>
-                                                <option class="fbra_selectOption" value="TACNA">TACNA</option>
-                                                <option class="fbra_selectOption" value="TUMBES">TUMBES</option>
-                                                <option class="fbra_selectOption" value="UCAYALI">UCAYALI</option></select>
+                                                <select id="DepartamentoA" name="departamento" class="form-control">
+                                                     <option class="fbra_selectOption" value="ANCASH">ANCASH</option>
+                                                    <option class="fbra_selectOption" value="APURIMAC">APURIMAC</option>
+                                                    <option class="fbra_selectOption" value="AREQUIPA">AREQUIPA</option>
+                                                    <option class="fbra_selectOption" value="AYACUCHO">AYACUCHO</option>
+                                                    <option class="fbra_selectOption" value="CAJAMARCA">CAJAMARCA</option>
+                                                    <option class="fbra_selectOption" value="CUZCO">CUZCO</option>
+                                                    <option class="fbra_selectOption" value="HUANCAVELICA">HUANCAVELICA</option>
+                                                    <option class="fbra_selectOption" value="HUANUCO">HUANUCO</option>
+                                                    <option class="fbra_selectOption" value="ICA">ICA</option>
+                                                    <option class="fbra_selectOption" value="JUNIN">JUNIN</option>
+                                                    <option class="fbra_selectOption" value="LA LIBERTAD">LA LIBERTAD</option>
+                                                    <option class="fbra_selectOption" value="LAMBAYEQUE">LAMBAYEQUE</option>
+                                                    <option class="fbra_selectOption" value="LIMA">LIMA</option>
+                                                    <option class="fbra_selectOption" value="LORETO">LORETO</option>
+                                                    <option class="fbra_selectOption" value="MOQUEGUA">MOQUEGUA</option>
+                                                    <option class="fbra_selectOption" value="PASCO">PASCO</option>
+                                                    <option class="fbra_selectOption" value="PIURA">PIURA</option>
+                                                    <option class="fbra_selectOption" value="PUNO">PUNO</option>
+                                                    <option class="fbra_selectOption" value="SAN MARTIN">SAN MARTIN</option>
+                                                    <option class="fbra_selectOption" value="TACNA">TACNA</option>
+                                                    <option class="fbra_selectOption" value="TUMBES">TUMBES</option>
+                                                    <option class="fbra_selectOption" value="UCAYALI">UCAYALI</option>
+                                                </select>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
-                                            <label style="float:left !important" for="Tipo" class="col-lg-4 control-label">Apellidos</label>
+                                            <label style="float:left !important" for="NumeroA" class="col-lg-4 control-label">Numero Doc</label>
                                             <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="NumeroA" placeholder="Apellidos" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
+                                                <input type="text" class="form-control" id="NumeroA" placeholder="Tipo" name="numero" maxlength="8">
                                             </div>
+
                                             <label class="col-lg-4 control-label">Nacionalidad</label>
                                             <div class="col-lg-8">
-                                                <select name="deporte" class="form-control" id="NombresA">
-                                                    <option value="">Seleccione</option>
-                                                    <option value="argentina">Argentina</option>
-                                                    <option value="20">Afganistán</option>
-                                                    <option value="30">Albania</option>
-                                                    <option value="40">Alemania</option>
-                                                    <option value="50">Andorra</option>
-                                                    <option value="60">Angola</option>
-                                                    <option value="70">Anguilla</option>
-                                                    <option value="80">Antártida Argentina</option>
-                                                    <option value="90">Antigua y Barbuda</option>
-                                                    <option value="100">Antillas Holandesas</option>
-                                                    <option value="110">Arabia Saudita</option>
-                                                    <option value="120">Argelia</option>
-                                                    <option value="130">Armenia</option>
-                                                    <option value="140">Aruba</option>
-                                                    <option value="150">Australia</option>
-                                                    <option value="160">Austria</option>
-                                                    <option value="170">Azerbaiján</option>
-                                                    <option value="180">Bahamas</option>
-                                                    <option value="190">Bahrain</option>
-                                                    <option value="200">Bangladesh</option>
-                                                    <option value="210">Barbados</option>
-                                                    <option value="220">Bélgica</option>
-                                                    <option value="230">Belice</option>
-                                                    <option value="240">Benin</option>
-                                                    <option value="250">Bhutan</option>
-                                                    <option value="260">Bielorusia</option>
-                                                    <option value="bolivia">Bolivia</option>
-                                                    <option value="280">Bosnia Herzegovina</option>
-                                                    <option value="290">Botswana</option>
-                                                    <option value="brasil">Brasil</option>
-                                                    <option value="310">Brunei</option>
-                                                    <option value="320">Bulgaria</option>
-                                                    <option value="330">Burkina Faso</option>
-                                                    <option value="340">Burundi</option>
-                                                    <option value="350">Cabo Verde</option>
-                                                    <option value="360">Camboya</option>
-                                                    <option value="370">Camerún</option>
-                                                    <option value="380">Canadá</option>
-                                                    <option value="390">Chad</option>
-                                                    <option value="chile">Chile</option>
-                                                    <option value="410">China</option>
-                                                    <option value="420">Chipre</option>
-                                                    <option value="430">Colombia</option>
-                                                    <option value="440">Comoros</option>
-                                                    <option value="450">Congo</option>
-                                                    <option value="460">Corea del Norte</option>
-                                                    <option value="470">Corea del Sur</option>
-                                                    <option value="480">Costa de Marfil</option>
-                                                    <option value="490">Costa Rica</option>
-                                                    <option value="500">Croacia</option>
-                                                    <option value="510">Cuba</option>
-                                                    <option value="520">Darussalam</option>
-                                                    <option value="530">Dinamarca</option>
-                                                    <option value="540">Djibouti</option>
-                                                    <option value="550">Dominica</option>
-                                                    <option value="560">Ecuador</option>
-                                                    <option value="570">Egipto</option>
-                                                    <option value="580">El Salvador</option>
-                                                    <option value="590">Em. Arabes Un.</option>
-                                                    <option value="600">Eritrea</option>
-                                                    <option value="610">Eslovaquia</option>
-                                                    <option value="620">Eslovenia</option>
-                                                    <option value="espana">España</option>
-                                                    <option value="640">Estados Unidos</option>
-                                                    <option value="650">Estonia</option>
-                                                    <option value="660">Etiopía</option>
-                                                    <option value="670">Fiji</option>
-                                                    <option value="680">Filipinas</option>
-                                                    <option value="690">Finlandia</option>
-                                                    <option value="700">Francia</option>
-                                                    <option value="710">Gabón</option>
-                                                    <option value="720">Gambia</option>
-                                                    <option value="730">Georgia</option>
-                                                    <option value="740">Ghana</option>
-                                                    <option value="750">Gibraltar</option>
-                                                    <option value="760">Grecia</option>
-                                                    <option value="770">Grenada</option>
-                                                    <option value="780">Groenlandia</option>
-                                                    <option value="790">Guadalupe</option>
-                                                    <option value="800">Guam</option>
-                                                    <option value="810">Guatemala</option>
-                                                    <option value="820">Guayana Francesa</option>
-                                                    <option value="830">Guinea</option>
-                                                    <option value="840">Guinea Ecuatorial</option>
-                                                    <option value="850">Guinea-Bissau</option>
-                                                    <option value="860">Guyana</option>
-                                                    <option value="870">Haití</option>
-                                                    <option value="880">Holanda</option>
-                                                    <option value="890">Honduras</option>
-                                                    <option value="900">Hong Kong</option>
-                                                    <option value="910">Hungría</option>
-                                                    <option value="920">India</option>
-                                                    <option value="930">Indonesia</option>
-                                                    <option value="940">Irak</option>
-                                                    <option value="950">Irán</option>
-                                                    <option value="960">Irlanda</option>
-                                                    <option value="970">Islandia</option>
-                                                    <option value="980">Islas Cayman</option>
-                                                    <option value="990">Islas Cook</option>
-                                                    <option value="1000">Islas Faroe</option>
-                                                    <option value="1010">Islas Marianas del Norte</option>
-                                                    <option value="1020">Islas Marshall</option>
-                                                    <option value="1030">Islas Solomon</option>
-                                                    <option value="1040">Islas Turcas y Caicos</option>
-                                                    <option value="1050">Islas Vírgenes</option>
-                                                    <option value="1060">Islas Wallis y Futuna</option>
-                                                    <option value="1070">Israel</option>
-                                                    <option value="1080">Italia</option>
-                                                    <option value="1090">Jamaica</option>
-                                                    <option value="1100">Japón</option>
-                                                    <option value="1110">Jordania</option>
-                                                    <option value="1120">Kazajstán</option>
-                                                    <option value="1130">Kenya</option>
-                                                    <option value="1140">Kirguistán</option>
-                                                    <option value="1150">Kiribati</option>
-                                                    <option value="1160">Kuwait</option>
-                                                    <option value="1170">Laos</option>
-                                                    <option value="1180">Lesotho</option>
-                                                    <option value="1190">Letonia</option>
-                                                    <option value="1200">Líbano</option>
-                                                    <option value="1210">Liberia</option>
-                                                    <option value="1220">Libia</option>
-                                                    <option value="1230">Liechtenstein</option>
-                                                    <option value="1240">Lituania</option>
-                                                    <option value="1250">Luxemburgo</option>
-                                                    <option value="1260">Macao</option>
-                                                    <option value="1270">Macedonia</option>
-                                                    <option value="1280">Madagascar</option>
-                                                    <option value="1290">Malasia</option>
-                                                    <option value="1300">Malawi</option>
-                                                    <option value="1310">Mali</option>
-                                                    <option value="1320">Malta</option>
-                                                    <option value="1330">Marruecos</option>
-                                                    <option value="1340">Martinica</option>
-                                                    <option value="1350">Mauricio</option>
-                                                    <option value="1360">Mauritania</option>
-                                                    <option value="1370">Mayotte</option>
-                                                    <option value="1380">México</option>
-                                                    <option value="1390">Micronesia</option>
-                                                    <option value="1400">Moldova</option>
-                                                    <option value="1410">Mónaco</option>
-                                                    <option value="1420">Mongolia</option>
-                                                    <option value="1430">Montserrat</option>
-                                                    <option value="1440">Mozambique</option>
-                                                    <option value="1450">Myanmar</option>
-                                                    <option value="1460">Namibia</option>
-                                                    <option value="1470">Nauru</option>
-                                                    <option value="1480">Nepal</option>
-                                                    <option value="1490">Nicaragua</option>
-                                                    <option value="1500">Níger</option>
-                                                    <option value="1510">Nigeria</option>
-                                                    <option value="1520">Noruega</option>
-                                                    <option value="1530">Nueva Caledonia</option>
-                                                    <option value="1540">Nueva Zelandia</option>
-                                                    <option value="1550">Omán</option>
-                                                    <option value="1570">Pakistán</option>
-                                                    <option value="1580">Panamá</option>
-                                                    <option value="1590">Papua Nueva Guinea</option>
-                                                    <option value="paraguay">Paraguay</option>
-                                                    <option value="1610">Perú</option>
-                                                    <option value="1620">Pitcairn</option>
-                                                    <option value="1630">Polinesia Francesa</option>
-                                                    <option value="1640">Polonia</option>
-                                                    <option value="1650">Portugal</option>
-                                                    <option value="1660">Puerto Rico</option>
-                                                    <option value="1670">Qatar</option>
-                                                    <option value="1680">RD Congo</option>
-                                                    <option value="1690">Reino Unido</option>
-                                                    <option value="1700">República Centroafricana</option>
-                                                    <option value="1710">República Checa</option>
-                                                    <option value="1720">República Dominicana</option>
-                                                    <option value="1730">Reunión</option>
-                                                    <option value="1740">Rumania</option>
-                                                    <option value="1750">Rusia</option>
-                                                    <option value="1760">Rwanda</option>
-                                                    <option value="1770">Sahara Occidental</option>
-                                                    <option value="1780">Saint Pierre y Miquelon</option>
-                                                    <option value="1790">Samoa</option>
-                                                    <option value="1800">Samoa Americana</option>
-                                                    <option value="1810">San Cristóbal y Nevis</option>
-                                                    <option value="1820">San Marino</option>
-                                                    <option value="1830">Santa Elena</option>
-                                                    <option value="1840">Santa Lucía</option>
-                                                    <option value="1850">Sao Tomé y Príncipe</option>
-                                                    <option value="1860">Senegal</option>
-                                                    <option value="1870">Serbia y Montenegro</option>
-                                                    <option value="1880">Seychelles</option>
-                                                    <option value="1890">Sierra Leona</option>
-                                                    <option value="1900">Singapur</option>
-                                                    <option value="1910">Siria</option>
-                                                    <option value="1920">Somalia</option>
-                                                    <option value="1930">Sri Lanka</option>
-                                                    <option value="1940">Sudáfrica</option>
-                                                    <option value="1950">Sudán</option>
-                                                    <option value="1960">Suecia</option>
-                                                    <option value="1970">Suiza</option>
-                                                    <option value="1980">Suriname</option>
-                                                    <option value="1990">Swazilandia</option>
-                                                    <option value="2000">Taiwán</option>
-                                                    <option value="uruguay">Uruguay</option>
+                                                <select name="nacionalidad" class="form-control" id="NacionalidadA">
+                                                    <option value="ARGENTINA">ARGENTINA</option>
+                                                    <option value="BOLIVIA">BOLIVIA</option>
+                                                    <option value="CHILE">CHILE</option>
+                                                    <option value="ESPAÑA">ESPAÑA</option>
+                                                    <option value="VENEZUELA">VENEZUELA</option>
+                                                    <option value="URUGUAY">URUGUAY</option>
+                                                    <option value="PERU">PERU</option>
 
                                                 </select>
                                             </div>
 
                                         </div>
                                     </div>
-                                    <div class="form-group" style="padding-bottom:2rem">
+                                    <div class="form-group" style="">
                                         <div class="col-md-6">
-                                            
+
                                             <label style="float:left !important" for="Tipo" class="col-lg-4 control-label">Tipo Doc</label>
                                             <div class="col-lg-8">
-                                                <select id="region" name="region" class="form-control">
-                                                    <option class="fbra_selectOption" value=""> selecciona un tipo</option>
-                                                    <option class="fbra_selectOption" value="ANCASH">DNI</option>
+                                                <select id="TipoA" name="tipo" class="form-control">
+                                                     <option class="fbra_selectOption" value="DNI">DNI</option>
                                                     <option class="fbra_selectOption" value="CARNET DE EXTRANJERIA">CARNET DE EXTRANJERIA</option>
-                                                    <option class="fbra_selectOption" value="Otro">Otro</option>
+                                                    <option class="fbra_selectOption" value="Pasaporte">Pasaporte</option>
 
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <label style="float:left !important" for="Tipo" class="col-lg-4 control-label">Numero Doc</label>
+                                            <a style="padding: 5px 10px; margin-top:15px;" href="#myModalTriajeU" role="button" data-backdrop='false' data-toggle='modal' class="btn btn-primary ">Direccion</a>
+
                                             <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="NumeroA" placeholder="Tipo" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
+                                                <input type="text" name="direccion" class="form-control" required id="DireccionA" placeholder="Direccion" disabled>
+                                                <input type="hidden" class="form-control" id="LocationA" required placeholder="Location">
                                             </div>
                                         </div>
+                                    </div>
+
+                                    <div class="form-group" style="">
+                                        <div class="col-md-12">
+                                            <h3>Sleccionar sisntomas</h3>
+                                            <label><input type="checkbox" id="cbox1" name="check[]" value="Congestión nasal"> Congestión nasalx</label><br>
+                                            <label><input type="checkbox" id="cbox2" name="check[]" value="Dificultad para respirar"> Dificultad para respirar</label><br>
+                                            <label><input type="checkbox" id="cbox3" name="check[]" value="Dolor de garganta"> Dolor de garganta</label><br>
+                                            <label><input type="checkbox" id="cbox4" name="check[]" value="Fiebre de ±37.7°"> Fiebre de ±37.7°</label><br>
+                                            <label><input type="checkbox" id="cbox5" name="check[]" value=" Tos seca"> Tos seca</label><br>
+                                            <label><input type="checkbox" id="cbox6" name="check[]" value="Sintomatologia Gastrointestinal"> Sintomatologia Gastrointestinal</label><br>
+
                                         </div>
+
+                                    </div>
+
 
                                     <div class="form-group" style="padding-bottom:2rem">
-                                        <div class="col-md-12">
-                                            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br>
-                                            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br>
-                                            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br>
-                                            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br>
-                                            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br>
-                                            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Este es mi primer checkbox</label><br>
-
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button type="submit" class="btn btn-default" onclick="Agregar();">Regitrar</button>
                                         </div>
-                                        
                                     </div>
-                                        <div class="form-group" style="padding-bottom:2rem">
-                                            <div class="col-lg-offset-2 col-lg-10">
-                                                <button type="submit" class="btn btn-default" onclick="Agregar();">Regitrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="z-index:999999" id="myModalTriajeU" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalTriajeU">
+        <div class="modal-dialog ">
+
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div style="background-color:red" class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 style="color:white" class="modal-title">Registrar Triaje</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="container" style="width:100%;">
+                        <div class="row">
+                            <div class="col-md-12">
+
+
+                                <div class="pac-card" id="pac-card">
+                                    <div>
+                                        <div id="title">
+                                            Buscar Direcciones
+                                        </div>
+                                        <div id="type-selector" class="pac-controls">
+                                            <input type="radio" name="type" id="changetype-all" checked="checked">
+                                            <label for="changetype-all">All</label>
+
+                                            <input type="radio" name="type" id="changetype-establishment">
+                                            <label for="changetype-establishment">Establishments</label>
+
+                                            <input type="radio" name="type" id="changetype-address">
+                                            <label for="changetype-address">Addresses</label>
+
+                                            <input type="radio" name="type" id="changetype-geocode">
+                                            <label for="changetype-geocode">Geocodes</label>
+                                        </div>
+                                        <div id="strict-bounds-selector" class="pac-controls">
+                                            <input type="checkbox" id="use-strict-bounds" value="">
+                                            <label for="use-strict-bounds">Strict Bounds</label>
+                                        </div>
+                                    </div>
+                                    <div id="pac-container">
+                                        <input id="pac-input" type="text"
+                                               placeholder="Ingrese Direccion">
+                                    </div>
+                                </div>
+                                <div id="map"></div>
+                                <div id="infowindow-content">
+                                    <img src="" width="16" height="16" id="place-icon">
+                                    <span id="place-name" class="title"></span><br>
+                                    <span id="place-address"></span>
+                                    <span id="place-location"></span>
+                                </div>
+
+                                <div style="visibility:hidden" id="location-id">
+                                    <span id="place-location"></span>
+                                </div>
+                                <br />
+                                <button style="float:right;margin-right:10px;" type="submit" class="btn btn-default" onclick="Direccion();">Guardar Direccion</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div style="z-index:999999" id="myModalTriajeEd" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalTriajeE">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content ">
+                <div style="background-color:red" class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 style="color:white" class="modal-title">Editar Triaje</h4>
+                </div>
+                <div class="modal-body ">
+                    <div class="container" style="width:100%;">
+                        <div class="row">
+                            <div class="col-md-12">
+
+
+                                <form id="formRegistrarTriaje" action="/Triaje/Index" method="post">
+
+                                    <div class="form-group" style="">
+                                        <div class="col-md-6">
+                                            <label class="col-lg-4 control-label">Nombres</label>
+                                            <div class="col-lg-8">
+                                                <input type="hidden" class="form-control" id="IdTriajeE" placeholder="Nombres" name="id" >
+
+                                                <input type="text" class="form-control" id="NombresE" placeholder="Nombres" name="nombre">
+                                            </div>
+                                            <label style="float:left !important" for="DepartamentoE" class="col-lg-4 control-label">Departamento</label>
+                                            <div class="col-lg-8">
+                                                <select id="DepartamentoE" name="departamento" class="form-control">
+                                                    <option class="fbra_selectOption" value="ANCASH">ANCASH</option>
+                                                    <option class="fbra_selectOption" value="APURIMAC">APURIMAC</option>
+                                                    <option class="fbra_selectOption" value="AREQUIPA">AREQUIPA</option>
+                                                    <option class="fbra_selectOption" value="AYACUCHO">AYACUCHO</option>
+                                                    <option class="fbra_selectOption" value="CAJAMARCA">CAJAMARCA</option>
+                                                    <option class="fbra_selectOption" value="CUZCO">CUZCO</option>
+                                                    <option class="fbra_selectOption" value="HUANCAVELICA">HUANCAVELICA</option>
+                                                    <option class="fbra_selectOption" value="HUANUCO">HUANUCO</option>
+                                                    <option class="fbra_selectOption" value="ICA">ICA</option>
+                                                    <option class="fbra_selectOption" value="JUNIN">JUNIN</option>
+                                                    <option class="fbra_selectOption" value="LA LIBERTAD">LA LIBERTAD</option>
+                                                    <option class="fbra_selectOption" value="LAMBAYEQUE">LAMBAYEQUE</option>
+                                                    <option class="fbra_selectOption" value="LIMA">LIMA</option>
+                                                    <option class="fbra_selectOption" value="LORETO">LORETO</option>
+                                                    <option class="fbra_selectOption" value="MOQUEGUA">MOQUEGUA</option>
+                                                    <option class="fbra_selectOption" value="PASCO">PASCO</option>
+                                                    <option class="fbra_selectOption" value="PIURA">PIURA</option>
+                                                    <option class="fbra_selectOption" value="PUNO">PUNO</option>
+                                                    <option class="fbra_selectOption" value="SAN MARTIN">SAN MARTIN</option>
+                                                    <option class="fbra_selectOption" value="TACNA">TACNA</option>
+                                                    <option class="fbra_selectOption" value="TUMBES">TUMBES</option>
+                                                    <option class="fbra_selectOption" value="UCAYALI">UCAYALI</option>
+                                                </select>
                                             </div>
                                         </div>
-</form>
+
+                                        <div class="col-md-6">
+                                            <label style="float:left !important" for="NumeroE" class="col-lg-4 control-label">Numero Doc</label>
+                                            <div class="col-lg-8">
+                                                <input type="text" class="form-control" id="NumeroE" placeholder="Tipo" name="numero" maxlength="8">
+                                            </div>
+
+                                            <label class="col-lg-4 control-label">Nacionalidad</label>
+                                            <div class="col-lg-8">
+                                                <select name="nacionalidad" class="form-control" id="NacionalidadE">
+
+                                                    <option value="ARGENTINA">ARGENTINA</option>
+                                                    <option value="BOLIVIA">BOLIVIA</option>
+                                                    <option value="BRASIL">BRASIL</option>
+                                                    <option value="CHILE">CHILE</option>
+                                                    <option value="ESPAÑA">ESPAÑA</option>
+                                                    <option value="VENEZUELA">VENEZUELA</option>
+                                                    <option value="URUGUAY">URUGUAY</option>
+                                                    <option value="PERU">PERU</option>
+
+                                                </select>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="">
+                                        <div class="col-md-6">
+
+                                            <label style="float:left !important" for="TipoA" class="col-lg-4 control-label">Tipo Doc</label>
+                                            <div class="col-lg-8">
+                                                <select id="TipoE" name="tipo" class="form-control">
+                                                      <option class="fbra_selectOption" value="DNI">DNI</option>
+                                                    <option class="fbra_selectOption" value="CARNET DE EXTRANJERIA">CARNET DE EXTRANJERIA</option>
+                                                    <option class="fbra_selectOption" value="Pasaporte">Pasaporte</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <a style="padding: 5px 10px; margin-top:15px;" href="#myModalTriajeU" role="button" data-backdrop='false' data-toggle='modal' class="btn btn-primary ">Direccion</a>
+
+                                            <div class="col-lg-8">
+                                                <input type="text" name="direccion" class="form-control" id="DireccionE" required placeholder="Direccion" disabled>
+                                                <input type="hidden" class="form-control" id="LocationE" required placeholder="Location">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" style="">
+                                        <div class="col-md-12">
+                                            <h3>Sleccionar sisntomas</h3>
+                                            <label><input type="checkbox" id="cbox1E" name="check[]" value="Congestión nasal"> Congestión nasal</label><br>
+                                            <label><input type="checkbox" id="cbox2E" name="check[]" value="Dificultad para respirar"> Dificultad para respirar</label><br>
+                                            <label><input type="checkbox" id="cbox3E" name="check[]" value="Dolor de garganta"> Dolor de garganta</label><br>
+                                            <label><input type="checkbox" id="cbox4E" name="check[]" value="Fiebre de ±37.7°"> Fiebre de ±37.7°</label><br>
+                                            <label><input type="checkbox" id="cbox5E" name="check[]" value=" Tos seca"> Tos seca</label><br>
+                                            <label><input type="checkbox" id="cbox6E" name="check[]" value="Sintomatologia Gastrointestinal"> Sintomatologia Gastrointestinal</label><br>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group" style="padding-bottom:2rem">
+                                        <div class="col-lg-offset-2 col-lg-10">
+                                            <button type="submit" class="btn btn-default" onclick="Editar();">Editar</button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -433,15 +532,56 @@
         </div>
     </div>
 </div>
-    <!-- Modal Pruebas-->
-   
-</div>
 <!-- Modal -->
+<!-- Modal Pruebas-->
+
 
 <script type="text/javascript">
-          
-            
-         
+    $('.modal-child').on('show.bs.modal', function () {
+    var modalParent = $(this).attr('data-modal-parent');
+    $(modalParent).css('opacity', 0);
+});
+ 
+$('.modal-child').on('hidden.bs.modal', function () {
+    var modalParent = $(this).attr('data-modal-parent');
+    $(modalParent).css('opacity', 1);
+});
+
+    function cargaTabla() {
+        $("#id_table_e tbody").empty();
+            $.get("/Triaje/ListaTriaje", {}, function (data) {
+                console.log(data.ObjListaTriaje);
+                $.each(data.ObjListaTriaje, function (index, item) {
+                    $('#id_table_e tbody').append("<tr>" +
+                        "<td width=''>" + item.Nombres + "</td>" +
+                        "<td width=''>" + item.Departamento + "</td>" +
+                        "<td width=''>" + item.NumeroDocumento + "</td>" +
+                        //"<td width=''>" + item.Address  + "</td>" +
+                         "<td id='Est' width='' style='color:red'>" + item.Estado + "</td>" +
+
+                        "<td id='"+item.IdTriaje+"' th='30% !important' >" +
+                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModalTriajeEd' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+
+                        "<a id='' onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                        "</td>" +
+                        "</tr>");
+
+                    if (item.Estado == "Evaluacion          " ||
+                        item.Estado == "Fallecido           " ||
+                        item.Estado == "Hospitalizado       " ||
+                        item.Estado == "Recuperado          " ||
+                        item.Estado == "Confirmado          "||
+                          item.Estado == "Con Riesgo          "
+                    ) {
+                        $("#" + item.IdTriaje + " a:first-child").remove();
+                        $("#" + item.IdTriaje + " a:last-child").remove();
+                        
+                     }
+                });
+
+            });
+    }
+
          function BuscarDocumento() {
          var pDocumento=$("#BuscaNumero").val();
          $("#id_table_e tbody").empty();
@@ -456,31 +596,31 @@
                          "<td  width='' style='color:red'>" + item.Estado + "</td>" +
 
                         "<td id='" + item.IdTriaje + "' width='30% !important' >" +
-                        
-                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+
+                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModalTriajeEd' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
 
                         "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
                         "</td>" +
                         "</tr>");
-                    
-                     
+
+
                     if (item.Estado == "Evaluacion          " ||
                         item.Estado == "Fallecido           " ||
                         item.Estado == "Hospitalizado       " ||
                         item.Estado == "Recuperado          " ||
                         item.Estado == "Confirmado          " ||
-                        item.Estado == "Sin Riesgo          "
+ 
+                        item.Estado == "Con Riesgo          "
                     ) {
-                         $("#" + item.IdTriaje+ " a:first-child").remove();
-                         $('#'+item.IdTriaje + " a:last-child").css("margin-left","4.3rem")
-                         console.log(" llega");
+                       $("#" + item.IdTriaje + " a:first-child").remove();
+                        $("#" + item.IdTriaje + " a:last-child").remove();
                      }
 
                 });
-                
+
             });
-           
-           
+
+
     }
     function Delete(id,nombre) {
         if (confirm('Desea eliminar a?'+nombre) == true) {
@@ -502,67 +642,193 @@
     function Detalle() {
     }
 
-    function Obtener(id) {
-        $.get("/Triaje/ListarKey?pCodigoTriaje=" + id, {}, function (data) {
-            console.log(data.ObjTriaje);
 
-            var item = data.ObjTriaje;
-            var x;
-            var y = item.Nombres;
-            var z = item.NumeroDocumento ;
-            x = y + " - " + z;
-            $('#NombreDni').text(x);
-            $('#NombreDni2').text(x); 
-            $('#IdTriaje').val(item.IdTriaje);
-            if(item.Respuesta1 != 0)
-                $('#is1').text("1.- " + item.Respuesta1);
-            if(item.Respuesta2 != 0)
-                $('#is2').text("2.- " + item.Respuesta2);
-            if(item.Respuesta3 != 0)
-                $('#is3').text("3.- " + item.Respuesta3);
-            if(item.Respuesta4 != 0)
-                $('#is4').text("4.- " + item.Respuesta4);
-            if(item.Respuesta5 != 0)
-                $('#is5').text("5.- " + item.Respuesta5);
-            if(item.Respuesta6 != 0)
-                $('#is6').text("6.- " + item.Respuesta6);
+    function Direccion() {
+        var loc = $("#location-id #place-location").text();
+        var address= $("#infowindow-content #place-address").text();
 
+        var regex  = /\((\d)?([^)]*)\)/g,
+    reempl = {
+        punto: ".",
+        nums:  "",
+        alnum: ""
+    },
+    
+    texto  = loc;
+    
+//Reemplazar puntos por $p
+texto = texto.replace(/\./g, reempl.punto);
 
-            //$('#Ubicacion').val(item.IdMapa);
-            //$('#Estado').val(item.Estado);
-            //$('#Departamento').val(item.Departamento);
-
-
-        });
+//Reemplazar paréntesis
+texto = texto.replace(regex, function (match, grupo1, grupo2) {
+    if (grupo1) { //empieza por número (porque el primer grupo coincidió)
+        //reemplazar por $l seguido del contenido de ambos grupos
+        return reempl.nums + grupo1 + grupo2;
+        
+    } else {      //no empieza por número
+        //reemplazar por $g seguido del contenido del segundo grupo
+        return reempl.alnum + grupo2;
+    }
+});
+ 
+        $("#DireccionA").val(address);
+        $("#LocationA").val(texto);
+        $("#myModalTriajeU").modal('hide');
 
     }
-  
 
-    function RegistrarPrueba() {
+    $("#formRegistrarTriaje").submit(function (ev) { ev.preventDefault(); });
+    function Agregar() {
+        var a = $("#LocationA").val();
+        var texto = a;
+        
+       
+        var textoseparado = texto.split(",");
+        var lat = textoseparado[0];
+        var log = textoseparado[1];
 
-        if ($('#PruebaCheckbox').is(':checked')) {
+       
              var datos = {
-
-                    IdTriaje: $("#IdTriaje").val(),
-                    PruebasRealizadas: 1
+                 pTipoTransaccion :'N',
+                 Nombres:$("#NombresA").val(),
+                 Nacionalidad:$("#NacionalidadA").val(),
+                 Departamento:$("#DepartamentoA").val(),
+                 TipoDocumento:$("#TipoA").val(),
+                 NumeroDocumento:$("#NumeroA").val(),
+                 Respuesta1:$("#cbox1:checked").val(),
+                 Respuesta2:$("#cbox2:checked").val(),
+                 Respuesta3:$("#cbox3:checked").val(),
+                 Respuesta4:$("#cbox4:checked").val(),
+                 Respuesta5:$("#cbox5:checked").val(),
+                 Respuesta6:$("#cbox6:checked").val(),
+                 Latitud:lat,
+                 Longitud:log
 
                 };
             $.ajax({
-                url: "/Cifras/RegistraPrueba",
+                url: "/Triaje/RegistraModifica",
                 data: datos,               /*aqui envias los valores a tu archivo*/
                 dataType: 'json',
                 type: 'post',
                 cache: false,
                 success: function (data) {
-
-
+                $("#myModalTriajeE").modal('hide');
+                cargaTabla();
+                    limpiarDatos();
+                console.log("data"+data.TipoDocumento);
 
                 }
             });
-        } else {
+    }
+    function limpiarDatos() {
+        $("#NombresE").val('');
+            
+            $("#NacionalidadE").val('');
+ 
+            $("#DepartamentoE").val('');
+            $("#TipoE").val('');
+        $("#NumeroE").val('');
+          $("#DireccionA").val('');
+        $('#IdTriajeE').val('');
+
+        $("#NombresA").val('');
+            
+            $("#NacionalidadA").val('');
+ 
+            $("#DepartamentoA").val('');
+            $("#TipoA").val('');
+        $("#NumeroA").val('');
+          $("#DireccionE").val('');
+    }
+    function Obtener(id) {
+        $.get("/Triaje/ListarKey?pCodigoTriaje=" + id, {}, function (data) {
+            console.log(data.ObjTriaje);
+            var item = data.ObjTriaje;
+            $("#NombresE").val(item.Nombres);
+            
+            $("#NacionalidadE").val(item.Nacionalidad);
+ 
+            $("#DepartamentoE").val(item.TipoDocumento);
+            $("#TipoE").val(item.Departamento);
+            $("#NumeroE").val(item.NumeroDocumento);
+            if(item.Respuesta1!='')
+            $("#cbox1E").prop("checked", true);  
+            if(item.Respuesta2!='')
+                $("#cbox2E").prop("checked", true);  
+            if(item.Respuesta3!='')
+                $("#cbox3E").prop("checked", true);  
+            if(item.Respuesta4!='')
+                $("#cbox4E").prop("checked", true);  
+            if(item.Respuesta5!='')
+                $("#cbox5E").prop("checked", true);  
+            if(item.Respuesta6!='')
+                $("#cbox6E").prop("checked", true); 
+             //$("#DireccionA").val(item.IdMapa);
+            $('#IdTriajeAE').val(item.IdTriaje);
+
+
+        });
+
+    }
+    function Editar() {
+        var a = $("#LocationA").val();
+        var texto = a;
+        
+       
+        var textoseparado = texto.split(",");
+        var lat = textoseparado[0];
+        var log = textoseparado[1];
+
+       
+             var datos = {
+                 pTipoTransaccion: 'A',
+                 IdTriaje:$("#IdTriajeE").val(),
+                 Nombres:$("#NombresE").val(),
+                 Nacionalidad:$("#NacionalidadE").val(),
+                 Departamento:$("#DepartamentoE").val(),
+                 TipoDocumento:$("#TipoE").val(),
+                 NumeroDocumento:$("#NumeroE").val(),
+                 Respuesta1:$("#cbox1E:checked").val(),
+                 Respuesta2:$("#cbox2E:checked").val(),
+                 Respuesta3:$("#cbox3E:checked").val(),
+                 Respuesta4:$("#cbox4E:checked").val(),
+                 Respuesta5:$("#cbox5E:checked").val(),
+                 Respuesta6:$("#cbox6E:checked").val(),
+                 Latitud:lat,
+                 Longitud:log
+
+                };
+            $.ajax({
+                url: "/Triaje/RegistraModifica",
+                data: datos,               /*aqui envias los valores a tu archivo*/
+                dataType: 'json',
+                type: 'post',
+                cache: false,
+                success: function (data) {
+                $("#myModalTriaje").modal('hide');
+                cargaTabla();
+                    limpiarDatos();
+                console.log("data"+data.TipoDocumento);
+
+                }
+            });
+     } 
+
+
+        function Delete(id, nombre) {
+        if (confirm('Desea eliminar a ' + nombre + ' ?') == true) {
+            $.ajax({
+                url: "/Triaje/Elimina?pCodigoTriaje=" + id,
+                data: id,               /*aqui envias los valores a tu archivo*/
+                dataType: 'json',
+                type: 'post',
+                cache: false,
+                success: function (response) {
+                    cargaTabla();
+
+                }
+            });
         }
-
-
     }
 
     $('#PositivoCheckbox').click(function () {
@@ -573,9 +839,9 @@
          $('#RegistrarConfirmado').prop('disabled', false);
         RegistrarConfirmado();
     });
- 
 
-        
+
+
 
 
     $(document).ready(function () {
@@ -591,28 +857,28 @@
                          "<td id='Est' width='' style='color:red'>" + item.Estado + "</td>" +
 
                         "<td id='"+item.IdTriaje+"' th='30% !important' >" +
-                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+                        "<a id='' style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModalTriajeEd' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
 
                         "<a id='' onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
                         "</td>" +
                         "</tr>");
-                     
+
                     if (item.Estado == "Evaluacion          " ||
                         item.Estado == "Fallecido           " ||
                         item.Estado == "Hospitalizado       " ||
                         item.Estado == "Recuperado          " ||
-                        item.Estado == "Confirmado          "
+                        item.Estado == "Confirmado          " ||
+                        item.Estado == "Con Riesgo          "
                     ) {
-                         $("#" + item.IdTriaje+ " a:first-child").remove();
-                         $('#'+item.IdTriaje + " a:last-child").css("margin-left","4.3rem")
-                         console.log(" llega");
+                        $("#" + item.IdTriaje + " a:first-child").remove();
+                        $("#" + item.IdTriaje + " a:last-child").remove();
                      }
                 });
-               
+
             });
                function RegistrarConfirmado() {
-        
-            
+
+
             var datos = {
 
                     IdTriaje: $("#IdTriaje").val(),
@@ -631,19 +897,19 @@
 
                 }
             });
-      
-        
+
+
     }
              $(function () {
                 $("#btn-prueba").on("click", function (e) {
-                  
+
                     if ($('#sidebar').hasClass('active')){
                      e.preventDefault();
                      var url = "/Triaje/Index2"
                     $.get(url).done(function (result) {
                         $("body").html(result);
                         $('#sidebar').addClass('active');
-                       
+
                     });
                        history.pushState(null, "",url);
                     }else{
@@ -653,7 +919,7 @@
                         $("body").html(result);
                         $('#sidebar').removeClass('active');
                     });
-                       history.pushState(null, "",url);  
+                       history.pushState(null, "",url);
                        }
                 });
              });
@@ -664,7 +930,7 @@
                     $.get(url).done(function (result) {
                         $("body").html(result);
                         $('#sidebar').addClass('active');
-                       
+
                     });
                        history.pushState(null, "",url);
                }else{
@@ -674,25 +940,25 @@
                         $("body").html(result);
                         $('#sidebar').removeClass('active');
                     });
-                      history.pushState(null, "",url);   
+                      history.pushState(null, "",url);
                }
-                   
+
         }
 
-           
+
         $("#a-btn01").on("click", function (e) {
                 var url=$(this).attr("href");
                     HabilitarSideBar(e,url);
-               
+
                 });
-           
+
 
 
             $(function () {
                 $("#a-btn2").on("click", function (e) {
                     var url=$(this).attr("href");
                     HabilitarSideBar(e,url);
-                     
+
                 });
             });
 
@@ -701,7 +967,7 @@
                 $("#a-btn3").on("click", function (e) {
                      var url=$(this).attr("href");
                     HabilitarSideBar(e,url);
-                     
+
                 });
              });
 
@@ -710,7 +976,7 @@
                 $("#a-btn4").on("click", function (e) {
                      var url=$(this).attr("href");
                     HabilitarSideBar(e,url);
-                     
+
                 });
             });
 
@@ -719,7 +985,7 @@
                 $("#a-btn5").on("click", function (e) {
                     var url=$(this).attr("href");
                     HabilitarSideBar(e,url);
-                   
+
                 });
               });
 
@@ -728,7 +994,7 @@
                 $("#a-btn6").on("click", function (e) {
   var url=$(this).attr("href");
                     HabilitarSideBar(e, url);
-                  
+
 
                 });
                 });
@@ -737,12 +1003,192 @@
                 $("#a-btn7").on("click", function (e) {
                        var url=$(this).attr("href");
                     HabilitarSideBar(e,url);
-                    
+
                 });
-                      
+
              });
      });
 
 
 
+</script>
+
+<script type="text/javascript">
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: -12.0431800, lng: -77.0282400 },
+            zoom: 6
+        });
+        var card = document.getElementById('pac-card');
+        var input = document.getElementById('pac-input');
+        var types = document.getElementById('type-selector');
+        var strictBounds = document.getElementById('strict-bounds-selector');
+
+        map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+        // Bind the map's bounds (viewport) property to the autocomplete object,
+        // so that the autocomplete requests use the current map bounds for the
+        // bounds option in the request.
+        autocomplete.bindTo('bounds', map);
+
+        // Set the data fields to return when the user selects a place.
+        autocomplete.setFields(
+            ['address_components', 'geometry', 'icon', 'name']);
+
+        var infowindow = new google.maps.InfoWindow();
+        var infowindowContent = document.getElementById('infowindow-content');
+        var infowindowContentLocation = document.getElementById('location-id');
+        
+        infowindow.setContent(infowindowContent);
+        var marker = new google.maps.Marker({
+            map: map,
+            anchorPoint: new google.maps.Point(0, -29)
+        });
+
+        autocomplete.addListener('place_changed', function () {
+            infowindow.close();
+            marker.setVisible(false);
+            var place = autocomplete.getPlace();
+            if (!place.geometry) {
+                // User entered the name of a Place that was not suggested and
+                // pressed the Enter key, or the Place Details request failed.
+                window.alert("No details available for input: '" + place.name + "'");
+                return;
+            }
+
+            // If the place has a geometry, then present it on a map.
+            if (place.geometry.viewport) {
+                map.fitBounds(place.geometry.viewport);
+            } else {
+                map.setCenter(place.geometry.location);
+                map.setZoom(17);  // Why 17? Because it looks good.
+            }
+            marker.setPosition(place.geometry.location);
+            marker.setVisible(true);
+
+            var address = '';
+            if (place.address_components) {
+                address = [
+                    (place.address_components[0] && place.address_components[0].short_name || ''),
+                    (place.address_components[1] && place.address_components[1].short_name || ''),
+                    (place.address_components[2] && place.address_components[2].short_name || '')
+                ].join(' ');
+            }
+            var place1 = autocomplete.getPlace();
+            infowindowContent.children['place-icon'].src = place.icon;
+            infowindowContent.children['place-name'].textContent = place.name;
+            infowindowContent.children['place-address'].textContent = address;
+            infowindowContentLocation.children['place-location'].textContent = place.geometry.location;
+            infowindow.open(map, marker);
+  
+            
+        });
+
+        // Sets a listener on a radio button to change the filter type on Places
+        // Autocomplete.
+        function setupClickListener(id, types) {
+            var radioButton = document.getElementById(id);
+            radioButton.addEventListener('click', function () {
+                autocomplete.setTypes(types);
+            });
+        }
+
+        setupClickListener('changetype-all', []);
+        setupClickListener('changetype-address', ['address']);
+        setupClickListener('changetype-establishment', ['establishment']);
+        setupClickListener('changetype-geocode', ['geocode']);
+
+        document.getElementById('use-strict-bounds')
+            .addEventListener('click', function () {
+                console.log('Checkbox clicked! New state=' + this.checked);
+                autocomplete.setOptions({ strictBounds: this.checked });
+            });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC-w2WPpFKxahplvlItRGHZ5cuK2fUeZI&libraries=places&callback=initMap"
+        async defer></script>
+<script type="text/javascript">
+  
+    $('#formRegistrarTriaje').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            "nombre": {
+                selector: '#NombresA',
+                validators: {
+                    notEmpty: {
+                        message: 'El nombre es un campo obligatorio'
+                    },
+                    stringLength: {
+                        message: 'El nombre es de 5 a 100 caracteres',
+                        min: 5,
+                        max: 100
+                    }
+                }
+            },
+              "departamento": {
+                selector: '#DepartamentoA',
+                validators: {
+                    notEmpty: {
+                        message: 'El departamento es un campo obligatorio'
+                    }
+                }
+              },
+                "nacionalidad": {
+                selector: '#NacionalidadA',
+                validators: {
+                    notEmpty: {
+                        message: 'La nacionalidad es un campo obligatorio'
+                    }
+
+                }
+            },
+                 "tipo": {
+                selector: '#TipoA',
+                validators: {
+                    notEmpty: {
+                        message: 'El tipo es un campo obligatorio'
+                    }
+
+                }
+            },
+                  "numero": {
+                selector: '#NumeroA',
+                validators: {
+                    notEmpty: {
+                        message: 'El numero es un campo obligatorio'
+                    },
+                    regexp: {
+                        regexp: /^([XYZ]{1}[0-9]{7})|([0-9]{8})$/i,
+                        message: 'datos incorrectos '
+                    }
+
+                }
+            },
+            "check[]": {
+               
+                validators: {
+                   choice: {
+                        min: 2,
+                        max: 6,
+                        message: 'Seleccione 2 - 6 sintomas'
+                    }
+
+                }
+            },
+
+
+
+        }
+    });
 </script>

@@ -198,6 +198,131 @@ namespace Covid19v3.SD
             }
             return oLista;
         }
+        public List<Triaje> ListarDocumentoConfirmado(System.String pNumeroDocumento)
+        {
+            SqlConnection oconexion = new SqlConnection(this.CadenaConexion());
+            SqlCommand ocomando = new SqlCommand("[" + this.EsquemaBaseDatos() + "].[uspTriaje_ListarEstadoConfirmado]", oconexion);
+            ocomando.CommandType = CommandType.StoredProcedure;
+            List<Triaje> oLista = new List<Triaje>();
+            ocomando.Parameters.Add("@NumeroDocumento", SqlDbType.VarChar, 250).Value = pNumeroDocumento;
+            try
+            {
+                oconexion.Open();
+                SqlDataReader oDataReader = ocomando.ExecuteReader();
+                while (oDataReader.Read())
+                {
+                    Triaje obeTriaje = new Triaje();
+                    obeTriaje = CargarDatosEntidad(oDataReader);
+                    oLista.Add(obeTriaje);
+                    obeTriaje = null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("ListarDocumentoConfirmado():" + e.Message);
+            }
+            finally
+            {
+                if (oconexion.State == ConnectionState.Open) { oconexion.Close(); }
+                ocomando.Dispose();
+                oconexion.Dispose();
+            }
+            return oLista;
+        }
+        public List<Triaje> ListarDocumentoHospitalizado(System.String pNumeroDocumento)
+        {
+            SqlConnection oconexion = new SqlConnection(this.CadenaConexion());
+            SqlCommand ocomando = new SqlCommand("[" + this.EsquemaBaseDatos() + "].[uspTriaje_ListarEstadoHospitalizado]", oconexion);
+            ocomando.CommandType = CommandType.StoredProcedure;
+            List<Triaje> oLista = new List<Triaje>();
+            ocomando.Parameters.Add("@NumeroDocumento", SqlDbType.VarChar, 250).Value = pNumeroDocumento;
+            try
+            {
+                oconexion.Open();
+                SqlDataReader oDataReader = ocomando.ExecuteReader();
+                while (oDataReader.Read())
+                {
+                    Triaje obeTriaje = new Triaje();
+                    obeTriaje = CargarDatosEntidad(oDataReader);
+                    oLista.Add(obeTriaje);
+                    obeTriaje = null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("ListarDocumentoHospitalizado:" + e.Message);
+            }
+            finally
+            {
+                if (oconexion.State == ConnectionState.Open) { oconexion.Close(); }
+                ocomando.Dispose();
+                oconexion.Dispose();
+            }
+            return oLista;
+        }
+        public List<Triaje> ListarDocumentoFallecido(System.String pNumeroDocumento)
+        {
+            SqlConnection oconexion = new SqlConnection(this.CadenaConexion());
+            SqlCommand ocomando = new SqlCommand("[" + this.EsquemaBaseDatos() + "].[uspTriaje_ListarEstadoFallecido]", oconexion);
+            ocomando.CommandType = CommandType.StoredProcedure;
+            List<Triaje> oLista = new List<Triaje>();
+            ocomando.Parameters.Add("@NumeroDocumento", SqlDbType.VarChar, 250).Value = pNumeroDocumento;
+            try
+            {
+                oconexion.Open();
+                SqlDataReader oDataReader = ocomando.ExecuteReader();
+                while (oDataReader.Read())
+                {
+                    Triaje obeTriaje = new Triaje();
+                    obeTriaje = CargarDatosEntidad(oDataReader);
+                    oLista.Add(obeTriaje);
+                    obeTriaje = null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("ListarDocumentoFallecido:" + e.Message);
+            }
+            finally
+            {
+                if (oconexion.State == ConnectionState.Open) { oconexion.Close(); }
+                ocomando.Dispose();
+                oconexion.Dispose();
+            }
+            return oLista;
+        }
+
+        public List<Triaje> ListarDocumentoRecuperados(System.String pNumeroDocumento)
+        {
+            SqlConnection oconexion = new SqlConnection(this.CadenaConexion());
+            SqlCommand ocomando = new SqlCommand("[" + this.EsquemaBaseDatos() + "].[uspTriaje_ListarEstadoReccuperado]", oconexion);
+            ocomando.CommandType = CommandType.StoredProcedure;
+            List<Triaje> oLista = new List<Triaje>();
+            ocomando.Parameters.Add("@NumeroDocumento", SqlDbType.VarChar, 250).Value = pNumeroDocumento;
+            try
+            {
+                oconexion.Open();
+                SqlDataReader oDataReader = ocomando.ExecuteReader();
+                while (oDataReader.Read())
+                {
+                    Triaje obeTriaje = new Triaje();
+                    obeTriaje = CargarDatosEntidad(oDataReader);
+                    oLista.Add(obeTriaje);
+                    obeTriaje = null;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception("ListarDocumentoFallecido:" + e.Message);
+            }
+            finally
+            {
+                if (oconexion.State == ConnectionState.Open) { oconexion.Close(); }
+                ocomando.Dispose();
+                oconexion.Dispose();
+            }
+            return oLista;
+        }
         public List<Triaje> ListarTriajePrueba()
         {
             SqlConnection oconexion = new SqlConnection(this.CadenaConexion());
@@ -442,7 +567,7 @@ namespace Covid19v3.SD
             {
                 oconexion.Open();
                 ocomando.ExecuteNonQuery();
-                StrResultado = ocomando.Parameters["@NumeroDocumento"].Value.ToString();
+                StrResultado = ocomando.Parameters["@Nombre"].Value.ToString();
 
             }
             catch (Exception e)

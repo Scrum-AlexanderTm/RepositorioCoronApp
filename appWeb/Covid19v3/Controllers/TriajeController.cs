@@ -15,7 +15,26 @@ namespace Covid19v3.Controllers
         private Triaje_SD oTriaje_SD = new Triaje_SD();
         private TriajeResponse oREspuesta = new TriajeResponse();
 
-        public JsonResult BuscarTriajePorNroDocumentoEvaluacion(System.String pDocumento)
+        public JsonResult BuscarTriajePorNroDocumentoEvaluacion(System.String pDocumentoE)
+        {
+
+            Triaje pTriaje = new Triaje();
+            try
+            {
+                pTriaje.NumeroDocumento = pDocumentoE;
+
+                oREspuesta.ObjListaTriaje = oTriaje_SD.ListarDocumentoEvaluacion(pDocumentoE);
+            }
+            catch (Exception ex)
+            {
+                pTriaje.CodigoError = 5;
+                pTriaje.DescripcionError = ex.Message;
+                oREspuesta.ObjTriaje = pTriaje;
+            }
+            return Json(oREspuesta, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult BuscarTriajePorNroDocumentoConfirmado(System.String pDocumento)
         {
 
             Triaje pTriaje = new Triaje();
@@ -23,7 +42,65 @@ namespace Covid19v3.Controllers
             {
                 pTriaje.NumeroDocumento = pDocumento;
 
-                oREspuesta.ObjListaTriaje = oTriaje_SD.ListarDocumentoEvaluacion(pDocumento);
+                oREspuesta.ObjListaTriaje = oTriaje_SD.ListarDocumentoConfirmado(pDocumento);
+            }
+            catch (Exception ex)
+            {
+                pTriaje.CodigoError = 5;
+                pTriaje.DescripcionError = ex.Message;
+                oREspuesta.ObjTriaje = pTriaje;
+            }
+            return Json(oREspuesta, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult BuscarTriajePorNroDocumentoHospitalizado(System.String pDocumento)
+        {
+
+            Triaje pTriaje = new Triaje();
+            try
+            {
+                pTriaje.NumeroDocumento = pDocumento;
+
+                oREspuesta.ObjListaTriaje = oTriaje_SD.ListarDocumentoHospitalizado(pDocumento);
+            }
+            catch (Exception ex)
+            {
+                pTriaje.CodigoError = 5;
+                pTriaje.DescripcionError = ex.Message;
+                oREspuesta.ObjTriaje = pTriaje;
+            }
+            return Json(oREspuesta, JsonRequestBehavior.AllowGet);
+
+        }
+        public JsonResult BuscarTriajePorNroDocumentoRecuperado(System.String pDocumento)
+        {
+
+            Triaje pTriaje = new Triaje();
+            try
+            {
+                pTriaje.NumeroDocumento = pDocumento;
+
+                oREspuesta.ObjListaTriaje = oTriaje_SD.ListarDocumentoRecuperados(pDocumento);
+            }
+            catch (Exception ex)
+            {
+                pTriaje.CodigoError = 5;
+                pTriaje.DescripcionError = ex.Message;
+                oREspuesta.ObjTriaje = pTriaje;
+            }
+            return Json(oREspuesta, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public JsonResult BuscarTriajePorNroDocumentoFallecido(System.String pDocumento)
+        {
+
+            Triaje pTriaje = new Triaje();
+            try
+            {
+                pTriaje.NumeroDocumento = pDocumento;
+
+                oREspuesta.ObjListaTriaje = oTriaje_SD.ListarDocumentoFallecido(pDocumento);
             }
             catch (Exception ex)
             {
@@ -214,10 +291,10 @@ namespace Covid19v3.Controllers
                 oTriaje_BE.MensajeError = "";
                 oTriaje_BE.CodigoError = 0;
 
-                if (!pBETriaje_BE.NumeroDocumento.Equals(""))
+                if (!pBETriaje_BE.Nombres.Equals(""))
                 {
 
-                    pBETriaje_BE.NumeroDocumento = Convert.ToString(oTriaje_SD.RegistraModifica(pBETriaje_BE, pTipoTransaccion));
+                    pBETriaje_BE.Nombres = Convert.ToString(oTriaje_SD.RegistraModifica(pBETriaje_BE, pTipoTransaccion));
 
                     return Json(pBETriaje_BE, JsonRequestBehavior.AllowGet);
 

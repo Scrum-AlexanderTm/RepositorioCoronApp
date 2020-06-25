@@ -67,7 +67,7 @@
                 <div class="tab-pane active " id="../Triaje/Index3">
                    
                     <br />
-                    <input onchange="BuscarDocumento2();" style="float:right;" class="form-control" type="number" id="BuscaNumero2" placeholder="Ingresar Numero Documento" name="BuscaNumero2" />
+                    <input  style="float:right;" class="form-control" type="number" id="BuscaNumeroE" placeholder="Ingresar Numero Documento" name="BuscaNumeroE" />
 
 
                     <table id="id_table_p" class="table table-striped ">
@@ -179,35 +179,35 @@
                         "<td width='30% !important' >" +
                         "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#ModalPruebas' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
 
-                        "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                        //"<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
                         "</td>" +
                          "</tr>");
 
                 });
             });
-         function BuscarDocumento() {
-         var pDocumento=$("#BuscaNumero").val();
-         $("#id_table_e tbody").empty();
-            $.get("/Triaje/BuscarTriajePorNroDocumentoConRiego?pDocumento="+pDocumento, {}, function (data) {
-                console.log(data.ObjListaTriaje);
-                $.each(data.ObjListaTriaje, function (index, item) {
-                    $('#id_table_e tbody').append("<tr>" +
-                        "<td width=''>" + item.Nombres + "</td>" +
-                        "<td width=''>" + item.Departamento + "</td>" +
-                        "<td width=''>" + item.NumeroDocumento + "</td>" +
-                        //"<td width=''>" + item.Address  + "</td>" +
-                         "<td width='' style='color:red'>" + item.Estado + "</td>" +
+    $("#BuscaNumeroE").change(function () {
+        var pDocumentoE = $("#BuscaNumeroE").val();
+        $("#id_table_p tbody").empty();
+        $.get("/Triaje/BuscarTriajePorNroDocumentoEvaluacion?pDocumentoE=" + pDocumentoE, {}, function (data) {
+            console.log(data.ObjListaTriaje);
+            $.each(data.ObjListaTriaje, function (index, item) {
+                $('#id_table_p tbody').append("<tr>" +
+                    "<td width=''>" + item.Nombres + "</td>" +
+                    "<td width=''>" + item.Departamento + "</td>" +
+                    "<td width=''>" + item.NumeroDocumento + "</td>" +
+                    //"<td width=''>" + item.Address  + "</td>" +
+                    "<td width='' style='color:red'>" + item.Estado + "</td>" +
 
-                        "<td width='30% !important' >" +
-                        "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
+                    "<td width='30% !important' >" +
+                    "<a style='padding: 1.5rem;' data-backdrop='false' data-dismiss='modal' data-toggle='modal' data-target='#myModal' onclick='Obtener(" + item.IdTriaje + ")'><span class='glyphicon glyphicon-pencil'></span></a>" +
 
-                        "<a onclick='Delete(" + item.IdTriaje + ","+ JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
-                        "</td>" +
-                         "</tr>");
+                    //"<a onclick='Delete(" + item.IdTriaje + "," + JSON.stringify(item.Nombres) + ")'><span class='glyphicon glyphicon-trash'></span></a>" +
+                    "</td>" +
+                    "</tr>");
 
-                });
             });
-            }
+        });
+    });
           
     function Delete(id,nombre) {
         if (confirm('Desea eliminar a?'+nombre) == true) {
