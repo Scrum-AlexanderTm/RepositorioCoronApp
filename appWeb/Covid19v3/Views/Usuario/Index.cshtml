@@ -64,10 +64,7 @@
                         <div class="row">
                             <div class="col-md-12">
 
-
-                                @using (Html.BeginForm())
-                                {
-                                    @Html.AntiForgeryToken()
+                                <form id="formEditarCiu" action="/Usuario/Index" method="post">
                                     <input type="hidden" class="form-control" id="IdUsuarioE">
                                     <div class="form-group" style="padding-bottom:2rem">
                                         <label class="col-lg-2 control-label">Nombres</label>
@@ -81,8 +78,12 @@
                                     <div class="form-group" style="padding-bottom:2rem">
                                         <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
                                         <div class="col-lg-10">
-                                            <input type="text" class="form-control" id="NumeroE"
-                                                   placeholder="Tipo">
+                                            <select id="TipoE" name="tipo" class="form-control">
+                                                <option class="fbra_selectOption" value="DNI">DNI</option>
+                                                <option class="fbra_selectOption" value="Carné de extranjería">Carné de extranjería</option>
+                                                <option class="fbra_selectOption" value="Pasaporte">Pasaporte</option>
+
+                                            </select>
                                         </div>
                                     </div>
 
@@ -99,7 +100,7 @@
                                             <button type="button" class="btn btn-default" onclick="Editar();">Editar</button>
                                         </div>
                                     </div>
-                                }
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -132,14 +133,19 @@
                                     <div class="form-group" style="padding-bottom:2rem">
                                         <label class="col-lg-2 control-label">Nombres</label>
                                         <div class="col-lg-10">
-                                            <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
+                                            <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre"">
                                         </div>
                                     </div>
                                     <div class="form-group" style="padding-bottom:2rem">
                                         <label style="float:left !important" for="Tipo" class="col-lg-2 control-label">Tipo Doc</label>
                                         <div class="col-lg-10">
-                                            <input type="text" class="form-control" id="NumeroA" placeholder="Tipo" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
-                                        </div>
+                                            <select id="TipoA" name="tipo" class="form-control">
+                                                <option class="fbra_selectOption" value="DNI">DNI</option>
+                                                <option class="fbra_selectOption" value="Carné de extranjería">Carné de extranjería</option>
+                                                <option class="fbra_selectOption" value="Pasaporte">Pasaporte</option>
+
+                                            </select>
+                                                </div>
                                     </div>
                                     <div class="form-group" style="padding-bottom:2rem">
                                         <label style="float:left" for="Fecha" class="col-lg-2 control-label">Fecha Nac</label>
@@ -217,7 +223,7 @@
             IdUsuario: $("#IdUsuarioE").val(),
             Nombres: $("#NombresE").val(),
             FechaNacimiento: $("#FechaE").val(),
-            TipoDocumento: $("#NumeroE").val()
+            TipoDocumento: $("#TipoE").val()
 
         };
         $.ajax({
@@ -232,8 +238,11 @@
                 limpiarregistro();
                 console.log(data);
 
-
-            }
+alert('Se edito!');
+            },
+            error: function(){
+    alert('error!');
+  }
         });
 
     }
@@ -241,7 +250,7 @@
     function limpiarregistro() {
         $("#NombresA").val("");
         $("#FechaA").val("");
-        $("#NumeroA").val("");
+        $("#TipoA").val("");
     }
     $("#formRegistrarCiu").submit(function (ev) { ev.preventDefault(); });
     function Agregar() {
@@ -251,7 +260,7 @@
             IdUsuario: 0,
             Nombres: $("#NombresA").val(),
             FechaNacimiento: $("#FechaA").val(),
-            TipoDocumento: $("#NumeroA").val()
+            TipoDocumento: $("#TipoA").val()
 
         };
         $.ajax({
@@ -265,9 +274,11 @@
                 cargaTabla();
                 limpiarregistro();
                 console.log(data);
+                alert("Se agrego")
 
-
-            }
+            },error: function(){
+    alert('error!');
+  }
         });
 
     }
@@ -279,7 +290,7 @@
             console.log(data.ObjUsuario);
             var item = data.ObjUsuario;
             $('#IdUsuarioE').val(item.IdUsuario);
-            $('#NumeroE').val(item.TipoDocumento);
+            $('#TipoE').val(item.TipoDocumento);
             $('#NombresE').val(item.Nombres);
             //$('#Telefono').val(item.Telefono);
             $('#FechaE').val(item.FechaNacimiento);
@@ -320,6 +331,18 @@ $('#FechaA').datetimepicker({
                         message: 'El nombre es de 5 a 100 caracteres',
                         min: 5,
                         max: 100
+                    },
+                    regexp: {
+                       regexp: /^[a-z-A-ZáéíóúÁÉÍÓÚÑñäÄëËïÏöÖüÜ ]{5,20}$/,
+                        message: 'datos incorrectos '
+                    }
+                }
+            },
+            "tipo": {
+                selector: '#TipoA',
+                validators: {
+                    notEmpty: {
+                        message: 'El tipo es un campo obligatorio'
                     }
                 }
             },
@@ -340,6 +363,72 @@ $('#FechaA').datetimepicker({
                 }
             },
 		
+
+
+        }
+    });
+</script>
+
+<script type="text/javascript">
+    $(function () {
+
+        $('#FechaA').datetimepicker({
+
+            pickTime: false
+
+        });
+
+    });
+    $('#formEditarCiu').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            "nombreE": {
+                selector: '#NombresE',
+                validators: {
+                    notEmpty: {
+                        message: 'El nombre es un campo obligatorio'
+                    },
+                    stringLength: {
+                        message: 'El nombre es de 5 a 100 caracteres',
+                        min: 5,
+                        max: 100
+                    },
+                    regexp: {
+                        regexp: /^[a-z-A-ZáéíóúÁÉÍÓÚÑñäÄëËïÏöÖüÜ ]{5,20}$/,
+                        message: 'datos incorrectos '
+                    }
+                }
+            },
+            "tipoE": {
+                selector: '#TipoE',
+                validators: {
+                    notEmpty: {
+                        message: 'El tipo es un campo obligatorio'
+                    }
+                }
+            },
+            "fechaE": {
+                selector: '#FechaE',
+                validators: {
+                    notEmpty: {
+                        message: 'La fecha de nacimiento es requerida y no puede ser vacia'
+                    },
+                    date: {
+
+                        format: 'YYYY-MM-DD',
+
+                        message: 'La fecha de nacimiento no es valida'
+
+                    }
+
+                }
+            },
+
 
 
         }

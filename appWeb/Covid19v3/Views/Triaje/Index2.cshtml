@@ -135,10 +135,10 @@
                                     </div>
                                     <div class="form-group " style="width:100%;padding: 0 1rem;">
                                         <label class=" checkbox-inline checkbox-info">
-                                            <input id="PruebaCheckbox" type="checkbox" value="">Realizar prueba de descarto de Covid19
+                                            <input id="PruebaCheckbox" type="radio" value="">Realizar prueba de descarto de Covid19
 
                                         </label>
-                                        <button id="btn-prueba" onclick="RegistrarPruebaS();" style="margin-left:4rem;" type="submit" class="btn btn-info">Evaluación</button>
+                                        <button disabled id="btn-prueba" onclick="RegistrarPruebaS();" style="margin-left:4rem;" type="submit" class="btn btn-info">Evaluación</button>
                                     </div>
                                 </form>
                             </div>
@@ -248,11 +248,14 @@
 
       }
 
-
+       $('#PruebaCheckbox').click(function () {
+         $('#btn-prueba').prop('disabled', false);
+        RegistrarPruebaS();
+    });
+       
 
     function RegistrarPruebaS() {
 
-        if ($('#PruebaCheckbox').is(':checked')) {
              var datos = {
 
                     IdTriaje: $("#IdTriaje").val(),
@@ -271,11 +274,9 @@
 
                 }
             });
-        } else {
-        }
+    } 
 
 
-    }
 
     $('#PositivoCheckbox').click(function () {
          $('#RegistrarConfirmado').prop('disabled', false);

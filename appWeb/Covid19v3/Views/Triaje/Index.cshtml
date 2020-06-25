@@ -217,7 +217,7 @@
                                         <div class="col-md-6">
                                             <label class="col-lg-4 control-label">Nombres</label>
                                             <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre" pattern="[A-ZáéíúóÁÉÚÍÓÑña-z]{1,15}">
+                                                <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre" >
                                             </div>
                                             <label style="float:left !important" for="departamento" class="col-lg-4 control-label">Departamento</label>
                                             <div class="col-lg-8">
@@ -412,7 +412,7 @@
                             <div class="col-md-12">
 
 
-                                <form id="formRegistrarTriaje" action="/Triaje/Index" method="post">
+                                <form id="formEditarTriaje" action="/Triaje/Index" method="post">
 
                                     <div class="form-group" style="">
                                         <div class="col-md-6">
@@ -420,7 +420,7 @@
                                             <div class="col-lg-8">
                                                 <input type="hidden" class="form-control" id="IdTriajeE" placeholder="Nombres" name="id" >
 
-                                                <input type="text" class="form-control" id="NombresE" placeholder="Nombres" name="nombre">
+                                                <input type="text" class="form-control" id="NombresE" placeholder="Nombres" name="nombreE">
                                             </div>
                                             <label style="float:left !important" for="DepartamentoE" class="col-lg-4 control-label">Departamento</label>
                                             <div class="col-lg-8">
@@ -454,7 +454,7 @@
                                         <div class="col-md-6">
                                             <label style="float:left !important" for="NumeroE" class="col-lg-4 control-label">Numero Doc</label>
                                             <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="NumeroE" placeholder="Tipo" name="numero" maxlength="8">
+                                                <input type="number" class="form-control" id="NumeroE" placeholder="Tipo"  name="numeroE"  maxlength="8">
                                             </div>
 
                                             <label class="col-lg-4 control-label">Nacionalidad</label>
@@ -716,8 +716,11 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
                 cargaTabla();
                     limpiarDatos();
                 console.log("data"+data.TipoDocumento);
-
-                }
+                    alert("Se registro");
+                },
+                error: function(){
+    alert('error!');
+  }
             });
     }
     function limpiarDatos() {
@@ -770,6 +773,7 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
         });
 
     }
+       $("#formEditarTriaje").submit(function (ev) { ev.preventDefault(); });
     function Editar() {
         var a = $("#LocationA").val();
         var texto = a;
@@ -778,8 +782,12 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
         var textoseparado = texto.split(",");
         var lat = textoseparado[0];
         var log = textoseparado[1];
+ 
+  var m = document.getElementById("NombresE").value;
+  var expreg = new RegExp("^[a-z-A-ZáéíóúÁÉÍÓÚÑñäÄëËïÏöÖüÜ ]{3,20}$");
 
-       
+        if (expreg.test(m) ) {
+            
              var datos = {
                  pTipoTransaccion: 'A',
                  IdTriaje:$("#IdTriajeE").val(),
@@ -805,13 +813,22 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
                 type: 'post',
                 cache: false,
                 success: function (data) {
-                $("#myModalTriaje").modal('hide');
+                $("#myModalTriajeEd").modal('hide');
                 cargaTabla();
                     limpiarDatos();
                 console.log("data"+data.TipoDocumento);
-
-                }
+                       alert("Se Edito");
+                },
+                error: function(){
+    alert('error!');
+  }
             });
+        }
+
+  else
+    alert("datos Incorrecto");
+
+       
      } 
 
 
@@ -1130,10 +1147,14 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
                         message: 'El nombre es un campo obligatorio'
                     },
                     stringLength: {
-                        message: 'El nombre es de 5 a 100 caracteres',
+                        message: 'El nombre es de 3 a 100 caracteres',
                         min: 5,
                         max: 100
+                    },regexp: {
+                       regexp: /^[a-z-A-ZáéíóúÁÉÍÓÚÑñäÄëËïÏöÖüÜ ]{3,20}$/,
+                        message: 'datos incorrectos '
                     }
+                  
                 }
             },
               "departamento": {
@@ -1164,6 +1185,87 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
             },
                   "numero": {
                 selector: '#NumeroA',
+                validators: {
+                    notEmpty: {
+                        message: 'El numero es un campo obligatorio'
+                    },
+                    regexp: {
+                        regexp: /^([XYZ]{1}[0-9]{7})|([0-9]{8})$/i,
+                        message: 'datos incorrectos '
+                    }
+
+                }
+            },
+            "check[]": {
+               
+                validators: {
+                   choice: {
+                        min: 2,
+                        max: 6,
+                        message: 'Seleccione 2 - 6 sintomas'
+                    }
+
+                }
+            },
+
+
+
+        }
+    });
+
+    $('#formEditarTriaje').bootstrapValidator({
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            "nombreE": {
+                selector: '#NombresE',
+                validators: {
+                    notEmpty: {
+                        message: 'El nombre es un campo obligatorio'
+                    },
+                    stringLength: {
+                        message: 'El nombre es de 3 a 100 caracteres',
+                        min: 5,
+                        max: 100
+                    },regexp: {
+                       regexp: /^[a-z-A-ZáéíóúÁÉÍÓÚÑñäÄëËïÏöÖüÜ ]{5,20}$/,
+                        message: 'datos incorrectos '
+                    }
+                  
+                }
+            },
+              "departamento": {
+                selector: '#DepartamentoE',
+                validators: {
+                    notEmpty: {
+                        message: 'El departamento es un campo obligatorio'
+                    }
+                }
+              },
+                "nacionalidad": {
+                selector: '#NacionalidadE',
+                validators: {
+                    notEmpty: {
+                        message: 'La nacionalidad es un campo obligatorio'
+                    }
+
+                }
+            },
+                 "tipoE": {
+                selector: '#TipoE',
+                validators: {
+                    notEmpty: {
+                        message: 'El tipo es un campo obligatorio'
+                    }
+
+                }
+            },
+                  "numero": {
+                selector: '#Numero',
                 validators: {
                     notEmpty: {
                         message: 'El numero es un campo obligatorio'
