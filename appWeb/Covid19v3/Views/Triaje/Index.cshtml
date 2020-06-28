@@ -3,7 +3,8 @@
     ViewBag.Title = "Index";
 }
 <style>
- 
+   
+
     #exTab1 .tab-content {
         color: white;
         background-color: #428bca;
@@ -195,8 +196,8 @@
 
 
     </div>
-
-    <div style="z-index:999999" id="myModalTriajeE" class="modal" tabindex="-1" role="dialogA" aria-labelledby="myModalTriajeE">
+    
+    <div class="modal fade" id="myModalTriajeE"  tabindex="-1" role="dialog" aria-labelledby="myModalTriajeELongTitle" aria-hidden="true">
         <div class="modal-dialog modal-lg">
 
             <!-- Modal content-->
@@ -217,12 +218,12 @@
                                         <div class="col-md-6">
                                             <label class="col-lg-4 control-label">Nombres</label>
                                             <div class="col-lg-8">
-                                                <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre" >
+                                                <input type="text" class="form-control" id="NombresA" placeholder="Nombres" name="nombre">
                                             </div>
                                             <label style="float:left !important" for="departamento" class="col-lg-4 control-label">Departamento</label>
                                             <div class="col-lg-8">
                                                 <select id="DepartamentoA" name="departamento" class="form-control">
-                                                     <option class="fbra_selectOption" value="ANCASH">ANCASH</option>
+                                                    <option class="fbra_selectOption" value="ANCASH">ANCASH</option>
                                                     <option class="fbra_selectOption" value="APURIMAC">APURIMAC</option>
                                                     <option class="fbra_selectOption" value="AREQUIPA">AREQUIPA</option>
                                                     <option class="fbra_selectOption" value="AYACUCHO">AYACUCHO</option>
@@ -276,7 +277,7 @@
                                             <label style="float:left !important" for="Tipo" class="col-lg-4 control-label">Tipo Doc</label>
                                             <div class="col-lg-8">
                                                 <select id="TipoA" name="tipo" class="form-control">
-                                                     <option class="fbra_selectOption" value="DNI">DNI</option>
+                                                    <option class="fbra_selectOption" value="DNI">DNI</option>
                                                     <option class="fbra_selectOption" value="CARNET DE EXTRANJERIA">CARNET DE EXTRANJERIA</option>
                                                     <option class="fbra_selectOption" value="Pasaporte">Pasaporte</option>
 
@@ -418,7 +419,7 @@
                                         <div class="col-md-6">
                                             <label class="col-lg-4 control-label">Nombres</label>
                                             <div class="col-lg-8">
-                                                <input type="hidden" class="form-control" id="IdTriajeE" placeholder="Nombres" name="id" >
+                                                <input type="hidden" class="form-control" id="IdTriajeE" placeholder="Nombres" name="id">
 
                                                 <input type="text" class="form-control" id="NombresE" placeholder="Nombres" name="nombreE">
                                             </div>
@@ -454,7 +455,7 @@
                                         <div class="col-md-6">
                                             <label style="float:left !important" for="NumeroE" class="col-lg-4 control-label">Numero Doc</label>
                                             <div class="col-lg-8">
-                                                <input type="number" class="form-control" id="NumeroE" placeholder="Tipo"  name="numeroE"  maxlength="8">
+                                                <input type="number" class="form-control" id="NumeroE" placeholder="Tipo" name="numeroE" maxlength="8">
                                             </div>
 
                                             <label class="col-lg-4 control-label">Nacionalidad</label>
@@ -481,7 +482,7 @@
                                             <label style="float:left !important" for="TipoA" class="col-lg-4 control-label">Tipo Doc</label>
                                             <div class="col-lg-8">
                                                 <select id="TipoE" name="tipo" class="form-control">
-                                                      <option class="fbra_selectOption" value="DNI">DNI</option>
+                                                    <option class="fbra_selectOption" value="DNI">DNI</option>
                                                     <option class="fbra_selectOption" value="CARNET DE EXTRANJERIA">CARNET DE EXTRANJERIA</option>
                                                     <option class="fbra_selectOption" value="Pasaporte">Pasaporte</option>
 
@@ -1127,6 +1128,8 @@ texto = texto.replace(regex, function (match, grupo1, grupo2) {
                 autocomplete.setOptions({ strictBounds: this.checked });
             });
     }
+
+ 
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC-w2WPpFKxahplvlItRGHZ5cuK2fUeZI&libraries=places&callback=initMap"
         async defer></script>
